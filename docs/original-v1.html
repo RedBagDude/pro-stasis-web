@@ -1,0 +1,1187 @@
+<!DOCTYPE html>
+
+<html class="scroll-smooth" lang="es"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>NEXO ROBOTICS | Tecnología que devuelve posibilidades</title>
+<!-- Google Fonts: Space Grotesk & Inter -->
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&amp;family=Space+Grotesk:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<!-- Tailwind CSS v3 with Plugins -->
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<!-- Lucide Icons -->
+<script src="https://unpkg.com/lucide@latest"></script>
+<!-- Tailwind Configuration -->
+<script>
+    tailwind.config = {
+      darkMode: 'class',
+      theme: {
+        extend: {
+          colors: {
+            brand: {
+              black: '#070709',
+              dark: '#0c0d12',
+              card: '#12131a',
+              border: 'rgba(255, 255, 255, 0.08)',
+              borderActive: 'rgba(255, 42, 42, 0.4)',
+              red: '#ff2a2a',
+              redHover: '#e01c1c',
+              gray: '#8a8d9a'
+            }
+          },
+          fontFamily: {
+            sans: ['Inter', 'sans-serif'],
+            mono: ['Space Grotesk', 'monospace'],
+            tech: ['Space Grotesk', 'sans-serif']
+          }
+        }
+      }
+    }
+  </script>
+<!-- BEGIN: Custom CSS -->
+<style data-purpose="base-styling">
+    body {
+      background-color: #070709;
+      color: #e2e4eb;
+      overflow-x: hidden;
+      font-feature-settings: "cv02", "cv03", "cv04", "cv11";
+    }
+    
+    /* Subtle grid background */
+    .tech-grid {
+      background-size: 40px 40px;
+      background-image: 
+        linear-gradient(to right, rgba(255, 255, 255, 0.02) 1px, transparent 1px),
+        linear-gradient(to bottom, rgba(255, 255, 255, 0.02) 1px, transparent 1px);
+    }
+
+    .tech-dots {
+      background-image: radial-gradient(rgba(255, 42, 42, 0.15) 1px, transparent 0);
+      background-size: 24px 24px;
+    }
+
+    /* HUD Lines and accents */
+    .hud-line {
+      position: relative;
+    }
+    .hud-line::after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 100%;
+      height: 1px;
+      background: linear-gradient(90deg, rgba(255,42,42,0.8), rgba(255,42,42,0.1), transparent);
+    }
+
+    /* Custom glow */
+    .glow-red {
+      box-shadow: 0 0 25px rgba(255, 42, 42, 0.35);
+    }
+    .glow-subtle {
+      box-shadow: 0 0 40px rgba(0, 0, 0, 0.8);
+    }
+
+    /* Scrollbar */
+    ::-webkit-scrollbar {
+      width: 6px;
+    }
+    ::-webkit-scrollbar-track {
+      background: #070709;
+    }
+    ::-webkit-scrollbar-thumb {
+      background: #232530;
+      border-radius: 3px;
+    }
+    ::-webkit-scrollbar-thumb:hover {
+      background: #ff2a2a;
+    }
+  </style>
+<!-- END: Custom CSS -->
+</head>
+<body class="tech-grid antialiased selection:bg-brand-red selection:text-white">
+<!-- BEGIN: Navigation Header -->
+<header class="fixed top-0 left-0 w-full z-50 bg-[#070709]/85 backdrop-blur-md border-b border-brand-border" data-purpose="site-navigation">
+<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
+<!-- Brand Logo -->
+<a class="flex items-center gap-3 group" href="#inicio">
+<div class="flex flex-col">
+<div class="flex items-center gap-1.5">
+<span class="text-2xl font-tech font-bold tracking-wider text-white">NEXO</span>
+<span class="w-2 h-2 rounded-full bg-brand-red animate-pulse"></span>
+</div>
+<span class="text-[9px] tracking-[0.3em] font-tech text-neutral-400 font-medium">ROBOTICS</span>
+</div>
+</a>
+<!-- Desktop Nav Links -->
+<nav class="hidden md:flex items-center gap-8 text-xs font-tech tracking-wider uppercase text-neutral-400">
+<a class="hover:text-white transition-colors duration-200" href="#inicio">Inicio</a>
+<a class="hover:text-white transition-colors duration-200" href="#tecnologia">Tecnología</a>
+<a class="hover:text-white transition-colors duration-200" href="#productos">Productos</a>
+<a class="hover:text-white transition-colors duration-200" href="#empresa">Empresa</a>
+<a class="hover:text-white transition-colors duration-200" href="#impacto">Impacto</a>
+<a class="hover:text-white transition-colors duration-200" href="#roadmap">Hoja de Ruta</a>
+<a class="hover:text-white transition-colors duration-200" href="#contacto">Contacto</a>
+</nav>
+<!-- Right Action & Language Selector -->
+<div class="flex items-center gap-4">
+<!-- Language Selector -->
+<button class="flex items-center gap-1 text-xs font-mono px-2.5 py-1.5 rounded bg-brand-card border border-brand-border text-neutral-300 hover:border-neutral-500 transition-colors" type="button">
+<span>ES</span>
+<i class="w-3.5 h-3.5 text-neutral-400" data-lucide="chevron-down"></i>
+</button>
+<!-- CTA Contacto -->
+<a class="hidden sm:inline-flex items-center justify-center px-4 py-2 text-xs font-tech font-medium tracking-wide bg-brand-red hover:bg-brand-redHover text-white rounded transition-colors shadow-sm" href="#contacto">
+          CONTACTO
+        </a>
+</div>
+</div>
+</header>
+<!-- END: Navigation Header -->
+<!-- BEGIN: Hero Section -->
+<section class="relative min-h-screen pt-28 pb-16 flex flex-col justify-between overflow-hidden" data-purpose="hero-section" id="inicio">
+<!-- Decorative Tech Ambient Glows -->
+<div class="absolute top-1/4 left-1/3 -translate-x-1/2 w-96 h-96 bg-brand-red/10 blur-[130px] pointer-events-none rounded-full"></div>
+<div class="absolute -top-10 right-0 w-[500px] h-[500px] bg-red-950/15 blur-[160px] pointer-events-none rounded-full"></div>
+<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full relative z-10 flex-1 flex flex-col justify-center">
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center my-auto">
+<!-- Left Column: Copy & CTAs -->
+<div class="lg:col-span-7 space-y-6">
+<div class="inline-flex items-center gap-2 px-3 py-1 rounded bg-red-950/40 border border-brand-red/30">
+<span class="w-1.5 h-1.5 rounded-full bg-brand-red"></span>
+<span class="text-[11px] font-mono tracking-widest uppercase text-red-400">INGENIERÍA BIOMÉDICA &amp; FABRICACIÓN DIGITAL</span>
+</div>
+<h1 class="text-4xl sm:text-6xl xl:text-7xl font-bold font-tech tracking-tight text-white uppercase leading-[1.08]">
+            Tecnología <br/>
+            que devuelve <br/>
+<span class="text-transparent bg-clip-text bg-gradient-to-r from-white via-neutral-200 to-neutral-400">posibilidades</span>
+</h1>
+<p class="text-base sm:text-lg text-neutral-400 max-w-xl font-normal leading-relaxed">
+            Desarrollamos prótesis robóticas modulares y exoesqueletos para mejorar la autonomía, la movilidad y la calidad de vida de las personas.
+          </p>
+<!-- Buttons -->
+<div class="flex flex-wrap items-center gap-4 pt-2">
+<a class="inline-flex items-center gap-2 px-6 py-3.5 bg-brand-red hover:bg-brand-redHover text-white font-tech font-semibold text-xs tracking-wider uppercase rounded transition-all duration-200 glow-red" href="#tecnologia">
+<span>NUESTRA TECNOLOGÍA</span>
+<i class="w-4 h-4" data-lucide="arrow-right"></i>
+</a>
+<button class="inline-flex items-center gap-2 px-6 py-3.5 bg-brand-card hover:bg-neutral-800 text-neutral-200 border border-brand-border rounded font-tech text-xs tracking-wider uppercase transition-colors" type="button">
+<i class="w-4 h-4 text-brand-red" data-lucide="play-circle"></i>
+<span>VER VÍDEO</span>
+</button>
+</div>
+</div>
+<!-- Right Column: Visual HUD & Robotic Prosthetic Illustration -->
+<div class="lg:col-span-5 relative flex items-center justify-center">
+<div class="relative w-full max-w-lg aspect-square rounded-2xl border border-brand-border bg-gradient-to-b from-[#141622]/60 to-[#0b0c12]/80 backdrop-blur p-6 flex flex-col justify-between overflow-hidden shadow-2xl">
+<!-- HUD Top Bar -->
+<div class="flex items-center justify-between border-b border-brand-border/60 pb-3">
+<span class="text-[10px] font-mono text-brand-red tracking-widest uppercase flex items-center gap-1.5">
+<span class="w-1.5 h-1.5 bg-brand-red rounded-full"></span>
+                SYSTEM ACTIVE // ARM-PROTOTYPE v2.4
+              </span>
+<span class="text-[10px] font-mono text-neutral-500">60 FPS • SENSORS ONLINE</span>
+</div>
+<!-- Central Technical Visual -->
+<div class="relative my-4 flex items-center justify-center">
+<!-- SVG Schematic Representation of Robotic Prosthetic Arm -->
+<svg class="w-full max-w-[340px] stroke-current text-white/90" fill="none" viewbox="0 0 400 400" xmlns="http://www.w3.org/2000/svg">
+<!-- Target Reticle & Circles -->
+<circle cx="200" cy="200" r="170" stroke="rgba(255,255,255,0.06)" stroke-dasharray="4 4" stroke-width="1.5"></circle>
+<circle cx="200" cy="200" r="120" stroke="rgba(255,42,42,0.15)" stroke-width="1"></circle>
+<circle cx="200" cy="200" r="60" stroke="rgba(255,255,255,0.08)" stroke-width="1"></circle>
+<!-- Bionic Forearm Structure -->
+<path d="M120 350 L145 220 L160 180 L200 120" stroke="rgba(255,255,255,0.8)" stroke-linecap="round" stroke-width="3"></path>
+<path d="M170 350 L185 240 L195 180 L200 120" stroke="#ff2a2a" stroke-linecap="round" stroke-width="2.5"></path>
+<path d="M220 350 L210 230 L215 180 L200 120" stroke="rgba(255,255,255,0.8)" stroke-linecap="round" stroke-width="3"></path>
+<!-- Wrist joint -->
+<circle cx="200" cy="120" fill="#12131a" r="14" stroke="#ff2a2a" stroke-width="2.5"></circle>
+<circle cx="200" cy="120" fill="#ff2a2a" r="6"></circle>
+<!-- Palm block -->
+<polygon fill="rgba(255,255,255,0.05)" points="180,110 220,110 230,80 170,80" stroke="rgba(255,255,255,0.9)" stroke-width="2"></polygon>
+<!-- Articulated Fingers -->
+<!-- Thumb -->
+<path d="M170 85 L140 70 L130 50" stroke="#ff2a2a" stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5"></path>
+<!-- Index -->
+<path d="M185 80 L180 50 L175 25" stroke="rgba(255,255,255,0.85)" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path>
+<!-- Middle -->
+<path d="M200 80 L200 45 L200 20" stroke="#ff2a2a" stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5"></path>
+<!-- Ring -->
+<path d="M215 80 L220 50 L222 28" stroke="rgba(255,255,255,0.85)" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path>
+<!-- Pinky -->
+<path d="M228 85 L240 60 L245 42" stroke="rgba(255,255,255,0.7)" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path>
+<!-- Micro Sensor Nodes -->
+<circle cx="140" cy="70" fill="#ffffff" r="3"></circle>
+<circle cx="180" cy="50" fill="#ffffff" r="2.5"></circle>
+<circle cx="200" cy="45" fill="#ff2a2a" r="3"></circle>
+<circle cx="220" cy="50" fill="#ffffff" r="2.5"></circle>
+<circle cx="240" cy="60" fill="#ffffff" r="2"></circle>
+<!-- Callout telemetry lines -->
+<line stroke="rgba(255,255,255,0.3)" stroke-dasharray="2 2" stroke-width="1" x1="200" x2="290" y1="120" y2="120"></line>
+<circle cx="290" cy="120" fill="#ff2a2a" r="3"></circle>
+<text fill="#a0a3b1" font-family="Space Grotesk" font-size="9" x="300" y="124">ACTUADOR ROTATORIO</text>
+<line stroke="rgba(255,42,42,0.5)" stroke-dasharray="2 2" stroke-width="1" x1="185" x2="80" y1="240" y2="240"></line>
+<circle cx="80" cy="240" fill="#ff2a2a" r="3"></circle>
+<text fill="#ff2a2a" font-family="Space Grotesk" font-size="9" x="15" y="244">CANAL EMG</text>
+</svg>
+<!-- Technical Floating Badges -->
+<div class="absolute -left-2 bottom-6 bg-brand-black/90 border border-brand-border rounded p-2.5 shadow-lg backdrop-blur">
+<span class="text-[9px] font-mono text-neutral-400 block">PRECISIÓN DE CONTROL</span>
+<span class="text-sm font-tech font-bold text-white">99.4% <span class="text-[10px] text-brand-red font-mono">LATENCIA &lt; 15ms</span></span>
+</div>
+<div class="absolute -right-2 top-8 bg-brand-black/90 border border-brand-border rounded p-2.5 shadow-lg backdrop-blur">
+<span class="text-[9px] font-mono text-neutral-400 block">PESO TOTAL ESTIMADO</span>
+<span class="text-sm font-tech font-bold text-white">380 gr <span class="text-[10px] text-emerald-400 font-mono">ULTRALIGERO</span></span>
+</div>
+</div>
+<!-- HUD Bottom Details -->
+<div class="grid grid-cols-3 gap-2 pt-3 border-t border-brand-border/60 text-center">
+<div>
+<p class="text-[9px] font-mono text-neutral-500 uppercase">Mioeléctrico</p>
+<p class="text-xs font-tech font-semibold text-neutral-200">8 Canales</p>
+</div>
+<div>
+<p class="text-[9px] font-mono text-neutral-500 uppercase">Material</p>
+<p class="text-xs font-tech font-semibold text-neutral-200">Titanio/PA12</p>
+</div>
+<div>
+<p class="text-[9px] font-mono text-neutral-500 uppercase">Autonomía</p>
+<p class="text-xs font-tech font-semibold text-brand-red">24+ Horas</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- Quick Nav Metric Cards (01, 02, 03) -->
+<div class="grid grid-cols-1 md:grid-cols-3 gap-4 pt-12 mt-auto">
+<!-- Card 01 -->
+<a class="group bg-brand-card/70 border border-brand-border hover:border-brand-red/50 p-5 rounded-lg transition-all duration-300 relative overflow-hidden flex flex-col justify-between" href="#productos">
+<div class="flex items-start justify-between">
+<span class="text-2xl font-tech font-bold text-brand-red group-hover:scale-105 transition-transform">01</span>
+<i class="w-4 h-4 text-neutral-500 group-hover:text-white transition-colors" data-lucide="arrow-up-right"></i>
+</div>
+<div class="mt-4">
+<h3 class="text-xs font-tech font-bold uppercase tracking-wider text-white">Prótesis Robóticas</h3>
+<p class="text-[11px] font-mono text-neutral-400 uppercase mt-0.5">Miembro Superior</p>
+</div>
+</a>
+<!-- Card 02 -->
+<a class="group bg-brand-card/70 border border-brand-border hover:border-brand-red/50 p-5 rounded-lg transition-all duration-300 relative overflow-hidden flex flex-col justify-between" href="#exoesqueletos">
+<div class="flex items-start justify-between">
+<span class="text-2xl font-tech font-bold text-brand-red group-hover:scale-105 transition-transform">02</span>
+<i class="w-4 h-4 text-neutral-500 group-hover:text-white transition-colors" data-lucide="arrow-up-right"></i>
+</div>
+<div class="mt-4">
+<h3 class="text-xs font-tech font-bold uppercase tracking-wider text-white">Exoesqueletos Adaptativos</h3>
+<p class="text-[11px] font-mono text-neutral-400 uppercase mt-0.5">Miembro Inferior</p>
+</div>
+</a>
+<!-- Card 03 -->
+<a class="group bg-brand-card/70 border border-brand-border hover:border-brand-red/50 p-5 rounded-lg transition-all duration-300 relative overflow-hidden flex flex-col justify-between" href="#colaboracion">
+<div class="flex items-start justify-between">
+<span class="text-2xl font-tech font-bold text-brand-red group-hover:scale-105 transition-transform">03</span>
+<i class="w-4 h-4 text-neutral-500 group-hover:text-white transition-colors" data-lucide="arrow-up-right"></i>
+</div>
+<div class="mt-4">
+<h3 class="text-xs font-tech font-bold uppercase tracking-wider text-white">I+D e Innovación</h3>
+<p class="text-[11px] font-mono text-neutral-400 uppercase mt-0.5">Colaboración Europea</p>
+</div>
+</a>
+</div>
+</div>
+</section>
+<!-- END: Hero Section -->
+<!-- BEGIN: Technology Section -->
+<section class="py-24 border-t border-brand-border relative bg-gradient-to-b from-brand-black to-brand-dark/40" data-purpose="technology-section" id="tecnologia">
+<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+<!-- Section Tag -->
+<div class="flex items-center gap-2 mb-3">
+<span class="w-2.5 h-0.5 bg-brand-red"></span>
+<span class="text-xs font-tech tracking-widest text-brand-red uppercase font-semibold">| TECNOLOGÍA</span>
+</div>
+<!-- Section Title & Subtitle -->
+<div class="max-w-3xl mb-16">
+<h2 class="text-3xl sm:text-5xl font-bold font-tech text-white uppercase tracking-tight">
+          Combinando ingeniería, biología y personas
+        </h2>
+<p class="mt-4 text-neutral-400 text-sm sm:text-base leading-relaxed">
+          Integramos sensores mioeléctricos, control inteligente, fabricación aditiva y diseño modular para crear soluciones biomecánicas adaptadas a cada usuario.
+        </p>
+</div>
+<!-- Feature Matrix & Biomechanical Diagram -->
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+<!-- Left Features List -->
+<div class="lg:col-span-6 space-y-4">
+<!-- Feature 1 -->
+<div class="p-5 rounded-lg bg-brand-card/50 border border-brand-border hover:border-brand-red/40 transition-colors group">
+<div class="flex items-start gap-4">
+<div class="p-2.5 rounded bg-brand-red/10 border border-brand-red/30 text-brand-red group-hover:bg-brand-red group-hover:text-white transition-colors">
+<i class="w-5 h-5" data-lucide="activity"></i>
+</div>
+<div>
+<h4 class="text-sm font-tech font-bold uppercase text-white tracking-wide">Sensores EMG</h4>
+<p class="text-xs text-neutral-400 mt-1 leading-relaxed">Interpretación continua de señales mioeléctricas con algoritmos de filtrado adaptativo y reducción de artefactos musculares.</p>
+</div>
+</div>
+</div>
+<!-- Feature 2 -->
+<div class="p-5 rounded-lg bg-brand-card/50 border border-brand-border hover:border-brand-red/40 transition-colors group">
+<div class="flex items-start gap-4">
+<div class="p-2.5 rounded bg-brand-red/10 border border-brand-red/30 text-brand-red group-hover:bg-brand-red group-hover:text-white transition-colors">
+<i class="w-5 h-5" data-lucide="cpu"></i>
+</div>
+<div>
+<h4 class="text-sm font-tech font-bold uppercase text-white tracking-wide">Control Inteligente</h4>
+<p class="text-xs text-neutral-400 mt-1 leading-relaxed">Algoritmos de aprendizaje adaptativo que se calibran automáticamente a la anatomía y patrones motrices del paciente.</p>
+</div>
+</div>
+</div>
+<!-- Feature 3 -->
+<div class="p-5 rounded-lg bg-brand-card/50 border border-brand-border hover:border-brand-red/40 transition-colors group">
+<div class="flex items-start gap-4">
+<div class="p-2.5 rounded bg-brand-red/10 border border-brand-red/30 text-brand-red group-hover:bg-brand-red group-hover:text-white transition-colors">
+<i class="w-5 h-5" data-lucide="layers"></i>
+</div>
+<div>
+<h4 class="text-sm font-tech font-bold uppercase text-white tracking-wide">Actuadores de Precisión</h4>
+<p class="text-xs text-neutral-400 mt-1 leading-relaxed">Micromotores brushless con encoders magnéticos para movimientos fluidos, agarre proporcional y respuesta en tiempo real.</p>
+</div>
+</div>
+</div>
+<!-- Feature 4 -->
+<div class="p-5 rounded-lg bg-brand-card/50 border border-brand-border hover:border-brand-red/40 transition-colors group">
+<div class="flex items-start gap-4">
+<div class="p-2.5 rounded bg-brand-red/10 border border-brand-red/30 text-brand-red group-hover:bg-brand-red group-hover:text-white transition-colors">
+<i class="w-5 h-5" data-lucide="wrench"></i>
+</div>
+<div>
+<h4 class="text-sm font-tech font-bold uppercase text-white tracking-wide">Diseño Modular</h4>
+<p class="text-xs text-neutral-400 mt-1 leading-relaxed">Arquitectura desacoplada que facilita el reemplazo de piezas, mantenimiento simplificado y personalización estética y funcional.</p>
+</div>
+</div>
+</div>
+<!-- Feature 5 -->
+<div class="p-5 rounded-lg bg-brand-card/50 border border-brand-border hover:border-brand-red/40 transition-colors group">
+<div class="flex items-start gap-4">
+<div class="p-2.5 rounded bg-brand-red/10 border border-brand-red/30 text-brand-red group-hover:bg-brand-red group-hover:text-white transition-colors">
+<i class="w-5 h-5" data-lucide="printer"></i>
+</div>
+<div>
+<h4 class="text-sm font-tech font-bold uppercase text-white tracking-wide">Fabricación Digital</h4>
+<p class="text-xs text-neutral-400 mt-1 leading-relaxed">Escaneo 3D de alta precisión y manufactura aditiva con polímeros biomecánicos biocompatibles y ultraligeros.</p>
+</div>
+</div>
+</div>
+</div>
+<!-- Right Visual: Anatomy Cable Diagram & Labels -->
+<div class="lg:col-span-6 flex justify-center">
+<div class="relative w-full max-w-md bg-[#0a0b10] border border-brand-border rounded-xl p-8 flex flex-col items-center justify-center min-h-[480px]">
+<!-- Graphic schematic -->
+<div class="relative w-full h-[400px] flex items-center justify-center">
+<!-- Silhouette & Sensors Visual -->
+<svg class="w-full h-full max-w-[260px]" fill="none" viewbox="0 0 300 450" xmlns="http://www.w3.org/2000/svg">
+<!-- Human Arm Outline (Transparent) -->
+<path d="M110 400 C110 320, 100 240, 120 180 C130 150, 135 120, 130 90 L135 60 C135 40, 150 20, 170 30 L180 50 L185 85 C180 120, 185 150, 195 180 C210 240, 205 320, 205 400 Z" fill="rgba(255,255,255,0.03)" stroke="rgba(255,255,255,0.15)" stroke-width="1.5"></path>
+<!-- Internal biomechanics & artificial tendons -->
+<path d="M135 340 Q150 220 155 120" stroke="#ff2a2a" stroke-dasharray="3 3" stroke-width="2"></path>
+<path d="M180 340 Q165 220 160 120" stroke="#ff2a2a" stroke-dasharray="3 3" stroke-width="2"></path>
+<path d="M148 120 L140 60" stroke="#ff2a2a" stroke-width="2"></path>
+<path d="M165 120 L175 60" stroke="#ff2a2a" stroke-width="2"></path>
+<!-- Sensor rings on forearm -->
+<ellipse cx="158" cy="270" fill="none" rx="36" ry="12" stroke="rgba(255,255,255,0.5)" stroke-width="1.5"></ellipse>
+<ellipse cx="158" cy="230" fill="none" rx="33" ry="10" stroke="rgba(255,255,255,0.5)" stroke-width="1.5"></ellipse>
+<!-- Actuator core block -->
+<rect fill="#181a24" height="40" rx="4" stroke="#ff2a2a" stroke-width="2" width="36" x="140" y="160"></rect>
+<circle cx="158" cy="180" fill="#ff2a2a" fill-opacity="0.3" r="8" stroke="#ff2a2a" stroke-width="1.5"></circle>
+<!-- Anchor points -->
+<circle cx="158" cy="270" fill="#ff2a2a" r="4"></circle>
+<circle cx="158" cy="180" fill="#ffffff" r="3"></circle>
+<circle cx="140" cy="60" fill="#ff2a2a" r="3"></circle>
+<circle cx="175" cy="60" fill="#ff2a2a" r="3"></circle>
+</svg>
+<!-- Technical Annotation Labels -->
+<!-- Label 1: Sensores EMG -->
+<div class="absolute top-[32%] -left-4 sm:left-2 bg-brand-black/90 border border-brand-red/50 px-3 py-1.5 rounded flex items-center gap-2">
+<span class="w-1.5 h-1.5 rounded-full bg-brand-red"></span>
+<span class="text-[10px] font-mono tracking-wider text-white">SENSORES EMG</span>
+</div>
+<!-- Label 2: Tendones -->
+<div class="absolute top-[18%] -right-2 sm:right-4 bg-brand-black/90 border border-brand-border px-3 py-1.5 rounded flex items-center gap-2">
+<span class="w-1.5 h-1.5 rounded-full bg-neutral-300"></span>
+<span class="text-[10px] font-mono tracking-wider text-neutral-200">TENDONES SINTÉTICOS</span>
+</div>
+<!-- Label 3: Actuadores -->
+<div class="absolute top-[52%] -right-4 sm:right-2 bg-brand-black/90 border border-brand-red/50 px-3 py-1.5 rounded flex items-center gap-2">
+<span class="w-1.5 h-1.5 rounded-full bg-brand-red"></span>
+<span class="text-[10px] font-mono tracking-wider text-white">ACTUADORES</span>
+</div>
+<!-- Label 4: Estructura Modular -->
+<div class="absolute bottom-[10%] -left-2 sm:left-4 bg-brand-black/90 border border-brand-border px-3 py-1.5 rounded flex items-center gap-2">
+<span class="w-1.5 h-1.5 rounded-full bg-neutral-400"></span>
+<span class="text-[10px] font-mono tracking-wider text-neutral-300">ESTRUCTURA MODULAR</span>
+</div>
+</div>
+<!-- Bottom Spec bar -->
+<div class="w-full pt-4 border-t border-brand-border/60 flex items-center justify-between text-[11px] font-mono text-neutral-400">
+<span>SCAN RATE: 1000 HZ</span>
+<span class="text-brand-red">BIO-SYNCHRONIZED</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- END: Technology Section -->
+<!-- BEGIN: Products Section -->
+<section class="py-24 border-t border-brand-border bg-brand-black relative" data-purpose="products-section" id="productos">
+<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+<!-- Section Tag -->
+<div class="flex items-center gap-2 mb-3">
+<span class="w-2.5 h-0.5 bg-brand-red"></span>
+<span class="text-xs font-tech tracking-widest text-brand-red uppercase font-semibold">| PRODUCTO 01</span>
+</div>
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center mb-24">
+<!-- Left Column: Hand Info -->
+<div class="lg:col-span-6 space-y-6">
+<h2 class="text-3xl sm:text-5xl font-bold font-tech text-white uppercase tracking-tight">
+            Prótesis Robótica Modular
+          </h2>
+<p class="text-neutral-400 text-sm sm:text-base leading-relaxed">
+            Una mano protésica avanzada, personalizable y funcional, diseñada para adaptarse a las necesidades reales de cada usuario y facilitar actividades de la vida diaria con máxima fiabilidad.
+          </p>
+<!-- Product Badges & Specifications Grid -->
+<div class="grid grid-cols-2 gap-3 pt-2">
+<div class="p-3 bg-brand-card/70 border border-brand-border rounded flex items-center gap-2.5">
+<i class="w-4 h-4 text-brand-red" data-lucide="hand"></i>
+<span class="text-xs font-mono text-neutral-300">Múltiples tipos de agarre</span>
+</div>
+<div class="p-3 bg-brand-card/70 border border-brand-border rounded flex items-center gap-2.5">
+<i class="w-4 h-4 text-brand-red" data-lucide="cpu"></i>
+<span class="text-xs font-mono text-neutral-300">Diseño 100% modular</span>
+</div>
+<div class="p-3 bg-brand-card/70 border border-brand-border rounded flex items-center gap-2.5">
+<i class="w-4 h-4 text-brand-red" data-lucide="scan"></i>
+<span class="text-xs font-mono text-neutral-300">Personalización 3D</span>
+</div>
+<div class="p-3 bg-brand-card/70 border border-brand-border rounded flex items-center gap-2.5">
+<i class="w-4 h-4 text-brand-red" data-lucide="activity"></i>
+<span class="text-xs font-mono text-neutral-300">Control mioeléctrico</span>
+</div>
+<div class="p-3 bg-brand-card/70 border border-brand-border rounded flex items-center gap-2.5">
+<i class="w-4 h-4 text-brand-red" data-lucide="rotate-cw"></i>
+<span class="text-xs font-mono text-neutral-300">Reparabilidad directa</span>
+</div>
+<div class="p-3 bg-brand-card/70 border border-brand-border rounded flex items-center gap-2.5">
+<i class="w-4 h-4 text-brand-red" data-lucide="radio"></i>
+<span class="text-xs font-mono text-neutral-300">Sensores táctiles (I+D)</span>
+</div>
+</div>
+<!-- CTA -->
+<div class="pt-4">
+<a class="inline-flex items-center gap-2 px-6 py-3 bg-brand-red hover:bg-brand-redHover text-white font-tech font-semibold text-xs tracking-wider uppercase rounded transition-colors shadow" href="#contacto">
+<span>VER DETALLES</span>
+<i class="w-4 h-4" data-lucide="arrow-right"></i>
+</a>
+</div>
+</div>
+<!-- Right Column: Interactive Hand Grips Viewer -->
+<div class="lg:col-span-6 bg-[#0e1017] border border-brand-border rounded-2xl p-6 sm:p-8 flex flex-col justify-between">
+<div class="flex items-center justify-between border-b border-brand-border/60 pb-3 mb-6">
+<span class="text-[10px] font-mono tracking-widest text-brand-red uppercase">PATRONES DE AGARRE PROGRAMADOS</span>
+<span class="text-[10px] font-mono text-neutral-400">NEXO GRIP ENGINE v1.2</span>
+</div>
+<!-- Visual Display of Selected Grip -->
+<div class="h-64 flex flex-col items-center justify-center relative bg-gradient-to-b from-black/40 to-transparent rounded-lg border border-brand-border/40 p-4">
+<div class="relative w-40 h-40 flex items-center justify-center">
+<!-- Mechanical Grip Vector Graphic -->
+<svg class="w-full h-full text-white" fill="none" stroke="currentColor" viewbox="0 0 100 100">
+<circle cx="50" cy="50" r="42" stroke="#252733" stroke-dasharray="2 2" stroke-width="1.5"></circle>
+<path d="M40 75 L45 55 L50 40 L50 25" stroke="#ff2a2a" stroke-linecap="round" stroke-width="3"></path>
+<path d="M50 75 L50 55 L55 35 L60 20" stroke="white" stroke-linecap="round" stroke-width="2.5"></path>
+<path d="M60 75 L55 55 L65 42 L72 30" stroke="white" stroke-linecap="round" stroke-width="2.5"></path>
+<path d="M30 65 L36 50 L42 42" stroke="#ff2a2a" stroke-linecap="round" stroke-width="3"></path>
+<circle cx="50" cy="75" fill="#ff2a2a" r="5"></circle>
+<circle cx="50" cy="40" fill="#fff" r="2.5"></circle>
+</svg>
+</div>
+<div class="text-center mt-2">
+<span class="text-base font-tech font-bold text-white uppercase tracking-wider" id="grip-name">Agarre de Precisión</span>
+<p class="text-[11px] font-mono text-neutral-400 mt-0.5" id="grip-desc">Pinza fina para sujeción de objetos pequeños (llaves, bolígrafos, monedas).</p>
+</div>
+</div>
+<!-- Grip Selector Thumbnails -->
+<div class="grid grid-cols-5 gap-2 mt-6 pt-4 border-t border-brand-border/60" data-purpose="grip-selector">
+<button class="p-2 bg-brand-card hover:border-brand-red border border-brand-border rounded text-center transition-colors" onclick="setGrip('Agarre de Precisión', 'Pinza fina para sujeción de objetos pequeños (llaves, bolígrafos, monedas).')" type="button">
+<i class="w-4 h-4 mx-auto text-brand-red mb-1" data-lucide="mouse-pointer"></i>
+<span class="text-[9px] font-mono text-neutral-300 block truncate">Precisión</span>
+</button>
+<button class="p-2 bg-brand-card hover:border-brand-red border border-brand-border rounded text-center transition-colors" onclick="setGrip('Agarre Cilíndrico', 'Fuerza circunferencial optimizada para vasos, botellas y mangos.')" type="button">
+<i class="w-4 h-4 mx-auto text-neutral-400 mb-1" data-lucide="cylinder"></i>
+<span class="text-[9px] font-mono text-neutral-300 block truncate">Cilíndrico</span>
+</button>
+<button class="p-2 bg-brand-card hover:border-brand-red border border-brand-border rounded text-center transition-colors" onclick="setGrip('Agarre de Pinza', 'Alineación de pulgar e índice para acciones cotidianas rápidas.')" type="button">
+<i class="w-4 h-4 mx-auto text-neutral-400 mb-1" data-lucide="scissors"></i>
+<span class="text-[9px] font-mono text-neutral-300 block truncate">Pinza</span>
+</button>
+<button class="p-2 bg-brand-card hover:border-brand-red border border-brand-border rounded text-center transition-colors" onclick="setGrip('Agarre Esférico', 'Apertura multidireccional amplia para esferas, frutas y pomos.')" type="button">
+<i class="w-4 h-4 mx-auto text-neutral-400 mb-1" data-lucide="circle-dot"></i>
+<span class="text-[9px] font-mono text-neutral-300 block truncate">Esférico</span>
+</button>
+<button class="p-2 bg-brand-card hover:border-brand-red border border-brand-border rounded text-center transition-colors" onclick="setGrip('Agarre Lateral', 'Sujeción lateral tipo tarjeta de crédito o documento plano.')" type="button">
+<i class="w-4 h-4 mx-auto text-neutral-400 mb-1" data-lucide="credit-card"></i>
+<span class="text-[9px] font-mono text-neutral-300 block truncate">Lateral</span>
+</button>
+</div>
+</div>
+</div>
+<!-- BEGIN: Exoesqueletos Adaptativos -->
+<div class="border-t border-brand-border/80 pt-20" id="exoesqueletos">
+<div class="flex items-center gap-2 mb-3">
+<span class="w-2.5 h-0.5 bg-brand-red"></span>
+<span class="text-xs font-tech tracking-widest text-brand-red uppercase font-semibold">| PRODUCTO 02</span>
+</div>
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+<!-- Left Visual: Exoskeleton Mockup & Specs -->
+<div class="lg:col-span-6 order-2 lg:order-1 bg-[#0e1017] border border-brand-border rounded-2xl p-6 sm:p-8 relative">
+<div class="flex items-center justify-between border-b border-brand-border/60 pb-3 mb-6">
+<span class="text-[10px] font-mono tracking-widest text-brand-red uppercase">LOWER LIMB EXOSKELETON • I+D</span>
+<span class="px-2 py-0.5 rounded text-[9px] font-mono bg-red-950/60 text-red-400 border border-brand-red/40">FASE PROTOTIPO</span>
+</div>
+<div class="relative py-8 flex items-center justify-center">
+<!-- Futuristic Exoskeleton Leg Schematic -->
+<svg class="w-full max-w-[280px]" fill="none" viewbox="0 0 320 380" xmlns="http://www.w3.org/2000/svg">
+<!-- Hip joint -->
+<circle cx="160" cy="50" fill="#12131a" r="22" stroke="#ff2a2a" stroke-width="2"></circle>
+<circle cx="160" cy="50" fill="#ff2a2a" r="8"></circle>
+<text fill="#a0a3b1" font-family="Space Grotesk" font-size="9" x="190" y="54">ACTUADOR DE CADERA</text>
+<!-- Femur structural strut -->
+<line stroke="#ffffff" stroke-linecap="round" stroke-width="4" x1="160" x2="160" y1="72" y2="180"></line>
+<line stroke="#ff2a2a" stroke-linecap="round" stroke-width="2" x1="172" x2="172" y1="85" y2="168"></line>
+<!-- Knee Joint & Harmonic Drive -->
+<circle cx="160" cy="200" fill="#181924" r="20" stroke="#ff2a2a" stroke-width="2.5"></circle>
+<circle cx="160" cy="200" r="10" stroke="#ffffff" stroke-width="1.5"></circle>
+<line stroke="rgba(255,42,42,0.6)" stroke-dasharray="2 2" stroke-width="1" x1="160" x2="70" y1="200" y2="200"></line>
+<text fill="#ff2a2a" font-family="Space Grotesk" font-size="9" x="15" y="203">RODILLA INTELIGENTE</text>
+<!-- Tibia structural strut -->
+<line stroke="#ffffff" stroke-linecap="round" stroke-width="4" x1="160" x2="160" y1="220" y2="320"></line>
+<!-- Ankle Foot Orthosis -->
+<path d="M160 320 L160 350 L210 350" stroke="#ff2a2a" stroke-linecap="round" stroke-linejoin="round" stroke-width="3"></path>
+<circle cx="160" cy="335" fill="#ffffff" r="6"></circle>
+</svg>
+</div>
+<div class="grid grid-cols-3 gap-3 border-t border-brand-border/60 pt-4 text-center">
+<div>
+<p class="text-[9px] font-mono text-neutral-500 uppercase">Torque</p>
+<p class="text-xs font-tech font-bold text-white">45 Nm</p>
+</div>
+<div>
+<p class="text-[9px] font-mono text-neutral-500 uppercase">Respuesta</p>
+<p class="text-xs font-tech font-bold text-brand-red">&lt; 10 ms</p>
+</div>
+<div>
+<p class="text-[9px] font-mono text-neutral-500 uppercase">Estructura</p>
+<p class="text-xs font-tech font-bold text-white">Fibra Carbono</p>
+</div>
+</div>
+</div>
+<!-- Right Copy: Details -->
+<div class="lg:col-span-6 order-1 lg:order-2 space-y-6">
+<h2 class="text-3xl sm:text-5xl font-bold font-tech text-white uppercase tracking-tight">
+              Exoesqueletos Adaptativos
+            </h2>
+<p class="text-neutral-400 text-sm sm:text-base leading-relaxed">
+              En desarrollo: exoesqueletos de miembro inferior diseñados para rehabilitación, asistencia a la movilidad y aumento de la autonomía de personas en proceso de recuperación motora.
+            </p>
+<!-- Feature Bullet List -->
+<div class="space-y-3 pt-2">
+<div class="flex items-center gap-3">
+<div class="w-2 h-2 rounded-full bg-brand-red"></div>
+<span class="text-xs sm:text-sm font-mono text-neutral-200">Rehabilitación asistida programable</span>
+</div>
+<div class="flex items-center gap-3">
+<div class="w-2 h-2 rounded-full bg-brand-red"></div>
+<span class="text-xs sm:text-sm font-mono text-neutral-200">Sensores inerciales (IMU) de alta cadencia</span>
+</div>
+<div class="flex items-center gap-3">
+<div class="w-2 h-2 rounded-full bg-brand-red"></div>
+<span class="text-xs sm:text-sm font-mono text-neutral-200">Adaptación en tiempo real a la marcha</span>
+</div>
+<div class="flex items-center gap-3">
+<div class="w-2 h-2 rounded-full bg-brand-red"></div>
+<span class="text-xs sm:text-sm font-mono text-neutral-200">Diseño ultra-ligero y ergonómico</span>
+</div>
+<div class="flex items-center gap-3">
+<div class="w-2 h-2 rounded-full bg-brand-red"></div>
+<span class="text-xs sm:text-sm font-mono text-neutral-200">Aplicaciones clínicas y de uso cotidiano</span>
+</div>
+</div>
+<!-- CTA -->
+<div class="pt-4">
+<a class="inline-flex items-center gap-2 px-6 py-3 bg-brand-red/90 hover:bg-brand-red text-white font-tech font-semibold text-xs tracking-wider uppercase rounded transition-colors shadow" href="#contacto">
+<span>PRÓXIMAMENTE — SOLICITAR DOSSIER</span>
+<i class="w-4 h-4" data-lucide="arrow-right"></i>
+</a>
+</div>
+</div>
+</div>
+</div>
+<!-- END: Exoesqueletos Adaptativos -->
+</div>
+</section>
+<!-- END: Products Section -->
+<!-- BEGIN: About & Philosophy Section -->
+<section class="py-24 border-t border-brand-border bg-[#08090d]" data-purpose="about-section" id="empresa">
+<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+<!-- Section Tag -->
+<div class="flex items-center gap-2 mb-3">
+<span class="w-2.5 h-0.5 bg-brand-red"></span>
+<span class="text-xs font-tech tracking-widest text-brand-red uppercase font-semibold">| SOBRE NOSOTROS</span>
+</div>
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-start mb-20">
+<div class="lg:col-span-7 space-y-6">
+<h2 class="text-3xl sm:text-5xl font-bold font-tech text-white uppercase tracking-tight">
+            Innovación con propósito
+          </h2>
+<p class="text-neutral-400 text-base sm:text-lg leading-relaxed">
+            Somos una empresa canaria de base tecnológica enfocada en el desarrollo de prótesis robóticas y exoesqueletos. Creemos en un futuro donde la tecnología sea una herramienta directa para la inclusión, la autonomía y el bienestar de las personas.
+          </p>
+<!-- 3 Pillars -->
+<div class="grid grid-cols-1 sm:grid-cols-3 gap-4 pt-6">
+<div class="p-4 bg-brand-card/40 border border-brand-border rounded">
+<div class="w-8 h-8 rounded bg-brand-red/10 border border-brand-red/30 flex items-center justify-center text-brand-red mb-3">
+<i class="w-4 h-4" data-lucide="lightbulb"></i>
+</div>
+<h4 class="text-xs font-tech font-bold uppercase text-white">Innovación</h4>
+<p class="text-[11px] font-mono text-neutral-400 mt-1">Tecnología real aplicada al día a día.</p>
+</div>
+<div class="p-4 bg-brand-card/40 border border-brand-border rounded">
+<div class="w-8 h-8 rounded bg-brand-red/10 border border-brand-red/30 flex items-center justify-center text-brand-red mb-3">
+<i class="w-4 h-4" data-lucide="heart"></i>
+</div>
+<h4 class="text-xs font-tech font-bold uppercase text-white">Personas</h4>
+<p class="text-[11px] font-mono text-neutral-400 mt-1">El usuario siempre en el centro del diseño.</p>
+</div>
+<div class="p-4 bg-brand-card/40 border border-brand-border rounded">
+<div class="w-8 h-8 rounded bg-brand-red/10 border border-brand-red/30 flex items-center justify-center text-brand-red mb-3">
+<i class="w-4 h-4" data-lucide="recycle"></i>
+</div>
+<h4 class="text-xs font-tech font-bold uppercase text-white">Sostenibilidad</h4>
+<p class="text-[11px] font-mono text-neutral-400 mt-1">Impacto positivo y máxima reparabilidad.</p>
+</div>
+</div>
+</div>
+<!-- Right Badge: Canarias Origin -->
+<div class="lg:col-span-5 bg-brand-card/50 border border-brand-border rounded-xl p-8 flex flex-col justify-between relative overflow-hidden">
+<div class="absolute -right-8 -bottom-8 w-40 h-40 bg-brand-red/5 rounded-full blur-2xl"></div>
+<div>
+<span class="text-[10px] font-mono text-brand-red tracking-widest uppercase">ORIGEN &amp; PROYECCIÓN</span>
+<h3 class="text-2xl font-tech font-bold text-white uppercase mt-2">Desde Canarias para el mundo</h3>
+<p class="text-xs font-normal text-neutral-400 leading-relaxed mt-3">
+              Desarrollamos ingeniería avanzada desde las Islas Canarias con visión internacional, colaborando con centros sanitarios, universidades europeas y socios estratégicos para democratizar la biónica.
+            </p>
+</div>
+<div class="pt-8 flex items-center justify-between border-t border-brand-border/60 mt-6">
+<div class="flex items-center gap-2">
+<i class="w-4 h-4 text-brand-red" data-lucide="map-pin"></i>
+<span class="text-xs font-mono text-neutral-300">La Palma, Islas Canarias</span>
+</div>
+<span class="text-[11px] font-mono text-neutral-500">UE • ESPAÑA</span>
+</div>
+</div>
+</div>
+<!-- BEGIN: Team Section -->
+<div class="border-t border-brand-border pt-16" data-purpose="team-section">
+<div class="flex items-center gap-2 mb-3">
+<span class="w-2.5 h-0.5 bg-brand-red"></span>
+<span class="text-xs font-tech tracking-widest text-brand-red uppercase font-semibold">| NUESTRO EQUIPO</span>
+</div>
+<div class="max-w-2xl mb-12">
+<h3 class="text-3xl sm:text-4xl font-bold font-tech text-white uppercase tracking-tight">
+            Talento, pasión y visión
+          </h3>
+<p class="text-neutral-400 text-sm mt-2">
+            Un equipo multidisciplinar comprometido con la innovación biomédica, la ingeniería de precisión y el impacto social positivo.
+          </p>
+</div>
+<!-- 3 Team Members -->
+<div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+<!-- Member 1: Adam -->
+<div class="bg-brand-card border border-brand-border rounded-xl overflow-hidden group hover:border-brand-red/50 transition-all duration-300 flex flex-col">
+<!-- Grayscale Portrait Mockup Container -->
+<div class="w-full aspect-square bg-[#161822] relative overflow-hidden flex items-center justify-center p-6 border-b border-brand-border/60">
+<div class="w-32 h-32 rounded-full border border-neutral-700 bg-neutral-900 flex items-center justify-center relative">
+<i class="w-16 h-16 text-neutral-600 group-hover:text-brand-red transition-colors" data-lucide="user"></i>
+</div>
+<div class="absolute bottom-3 left-3 bg-brand-black/80 px-2.5 py-1 rounded border border-brand-border">
+<span class="text-[10px] font-mono text-neutral-300">CEO</span>
+</div>
+</div>
+<div class="p-6">
+<h4 class="text-lg font-tech font-bold text-white tracking-wide">Adam</h4>
+<p class="text-xs font-mono text-brand-red uppercase mt-0.5">Director General</p>
+<p class="text-xs text-neutral-400 mt-3 leading-relaxed">
+                Estrategia integral, innovación abierta, alianzas europeas y desarrollo de negocio.
+              </p>
+</div>
+</div>
+<!-- Member 2: Cruz -->
+<div class="bg-brand-card border border-brand-border rounded-xl overflow-hidden group hover:border-brand-red/50 transition-all duration-300 flex flex-col">
+<div class="w-full aspect-square bg-[#161822] relative overflow-hidden flex items-center justify-center p-6 border-b border-brand-border/60">
+<div class="w-32 h-32 rounded-full border border-neutral-700 bg-neutral-900 flex items-center justify-center relative">
+<i class="w-16 h-16 text-neutral-600 group-hover:text-brand-red transition-colors" data-lucide="cpu"></i>
+</div>
+<div class="absolute bottom-3 left-3 bg-brand-black/80 px-2.5 py-1 rounded border border-brand-border">
+<span class="text-[10px] font-mono text-neutral-300">CTO</span>
+</div>
+</div>
+<div class="p-6">
+<h4 class="text-lg font-tech font-bold text-white tracking-wide">Cruz</h4>
+<p class="text-xs font-mono text-brand-red uppercase mt-0.5">CTO — Ingeniería</p>
+<p class="text-xs text-neutral-400 mt-3 leading-relaxed">
+                Desarrollo técnico, sensórica mioeléctrica avanzada, prototipado rápido y diseño de hardware.
+              </p>
+</div>
+</div>
+<!-- Member 3: Alejandro -->
+<div class="bg-brand-card border border-brand-border rounded-xl overflow-hidden group hover:border-brand-red/50 transition-all duration-300 flex flex-col">
+<div class="w-full aspect-square bg-[#161822] relative overflow-hidden flex items-center justify-center p-6 border-b border-brand-border/60">
+<div class="w-32 h-32 rounded-full border border-neutral-700 bg-neutral-900 flex items-center justify-center relative">
+<i class="w-16 h-16 text-neutral-600 group-hover:text-brand-red transition-colors" data-lucide="shield-check"></i>
+</div>
+<div class="absolute bottom-3 left-3 bg-brand-black/80 px-2.5 py-1 rounded border border-brand-border">
+<span class="text-[10px] font-mono text-neutral-300">COO</span>
+</div>
+</div>
+<div class="p-6">
+<h4 class="text-lg font-tech font-bold text-white tracking-wide">Alejandro</h4>
+<p class="text-xs font-mono text-brand-red uppercase mt-0.5">COO — Operaciones</p>
+<p class="text-xs text-neutral-400 mt-3 leading-relaxed">
+                Gestión operativa, cadena de suministro, calidad de manufactura y relaciones estratégicas.
+              </p>
+</div>
+</div>
+</div>
+</div>
+<!-- END: Team Section -->
+</div>
+</section>
+<!-- END: About & Philosophy Section -->
+<!-- BEGIN: Collaboration & Alliances Section -->
+<section class="py-24 border-t border-brand-border bg-brand-dark/40" data-purpose="collaboration-section" id="colaboracion">
+<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+<div class="lg:col-span-7 space-y-6">
+<div class="flex items-center gap-2 mb-2">
+<span class="w-2.5 h-0.5 bg-brand-red"></span>
+<span class="text-xs font-tech tracking-widest text-brand-red uppercase font-semibold">| COLABORACIÓN</span>
+</div>
+<h2 class="text-3xl sm:text-5xl font-bold font-tech text-white uppercase tracking-tight">
+            Creciendo juntos
+          </h2>
+<p class="text-neutral-400 text-sm sm:text-base leading-relaxed">
+            Buscamos empresas, centros de investigación, universidades y clínicas ortopédicas interesadas en colaborar en proyectos de I+D, validación clínica y desarrollo de nueva generación tecnológica.
+          </p>
+<!-- Collaboration Pillars Cards -->
+<div class="grid grid-cols-1 sm:grid-cols-2 gap-4 pt-2">
+<div class="p-4 bg-brand-card border border-brand-border rounded flex items-center gap-3">
+<div class="p-2 bg-brand-red/10 text-brand-red rounded border border-brand-red/30">
+<i class="w-4 h-4" data-lucide="network"></i>
+</div>
+<span class="text-xs font-mono text-neutral-200">Empresas de robótica y mecatrónica</span>
+</div>
+<div class="p-4 bg-brand-card border border-brand-border rounded flex items-center gap-3">
+<div class="p-2 bg-brand-red/10 text-brand-red rounded border border-brand-red/30">
+<i class="w-4 h-4" data-lucide="stethoscope"></i>
+</div>
+<span class="text-xs font-mono text-neutral-200">Clínicas y ortopedias</span>
+</div>
+<div class="p-4 bg-brand-card border border-brand-border rounded flex items-center gap-3">
+<div class="p-2 bg-brand-red/10 text-brand-red rounded border border-brand-red/30">
+<i class="w-4 h-4" data-lucide="graduation-cap"></i>
+</div>
+<span class="text-xs font-mono text-neutral-200">Universidades y centros de I+D</span>
+</div>
+<div class="p-4 bg-brand-card border border-brand-border rounded flex items-center gap-3">
+<div class="p-2 bg-brand-red/10 text-brand-red rounded border border-brand-red/30">
+<i class="w-4 h-4" data-lucide="printer"></i>
+</div>
+<span class="text-xs font-mono text-neutral-200">Fabricación avanzada e impresión 3D</span>
+</div>
+</div>
+<div class="pt-4">
+<a class="inline-flex items-center gap-2 px-6 py-3 bg-brand-red hover:bg-brand-redHover text-white font-tech font-semibold text-xs tracking-wider uppercase rounded transition-colors shadow" href="#contacto">
+<span>COLABORA CON NOSOTROS</span>
+<i class="w-4 h-4" data-lucide="arrow-right"></i>
+</a>
+</div>
+</div>
+<!-- Right Seals / Programs Badge -->
+<div class="lg:col-span-5 bg-brand-card border border-brand-border rounded-xl p-8 flex flex-col justify-between text-center sm:text-left">
+<div>
+<span class="text-[10px] font-mono text-brand-red tracking-widest uppercase">PROGRAMAS Y APOYOS EUROPEOS</span>
+<h4 class="text-xl font-tech font-bold text-white uppercase mt-2">EYE CANARIAS • ERASMUS PARA JÓVENES EMPRENDEDORES</h4>
+<p class="text-xs text-neutral-400 mt-3 leading-relaxed">
+              Iniciativa europea que fomenta el intercambio de competencias, investigación e internacionalización de empresas tecnológicas emergentes.
+            </p>
+</div>
+<!-- Graphical Stamp / Emblem -->
+<div class="my-6 p-6 rounded-lg bg-[#08090d] border border-brand-border/80 flex items-center justify-around">
+<div class="text-center">
+<i class="w-8 h-8 text-brand-red mx-auto mb-2" data-lucide="globe"></i>
+<span class="text-[10px] font-mono text-white block font-bold">EUROPEAN NETWORK</span>
+<span class="text-[9px] font-mono text-neutral-500">I+D Cross-border</span>
+</div>
+<div class="h-10 w-[1px] bg-brand-border"></div>
+<div class="text-center">
+<i class="w-8 h-8 text-neutral-300 mx-auto mb-2" data-lucide="award"></i>
+<span class="text-[10px] font-mono text-white block font-bold">EYE PROGRAM</span>
+<span class="text-[9px] font-mono text-neutral-500">Aceleración</span>
+</div>
+</div>
+<div class="text-center">
+<span class="text-[11px] font-mono text-neutral-500">Comprometidos con estándares médicos de la Unión Europea</span>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- END: Collaboration & Alliances Section -->
+<!-- BEGIN: Impact Section -->
+<section class="py-24 border-t border-brand-border bg-brand-black" data-purpose="impact-section" id="impacto">
+<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+<div class="flex items-center gap-2 mb-3">
+<span class="w-2.5 h-0.5 bg-brand-red"></span>
+<span class="text-xs font-tech tracking-widest text-brand-red uppercase font-semibold">| NUESTRO IMPACTO</span>
+</div>
+<div class="max-w-3xl mb-16">
+<h2 class="text-3xl sm:text-5xl font-bold font-tech text-white uppercase tracking-tight">
+          Tecnología para una sociedad más inclusiva
+        </h2>
+<p class="mt-4 text-neutral-400 text-sm sm:text-base leading-relaxed">
+          Desarrollamos soluciones que mejoran la calidad de vida, impulsan la autonomía y contribuyen a una sociedad más accesible y sostenible.
+        </p>
+</div>
+<!-- Impact Metrics / Values -->
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+<div class="p-6 bg-brand-card/60 border border-brand-border rounded-xl hover:border-brand-red/50 transition-colors">
+<div class="w-10 h-10 rounded bg-brand-red/10 border border-brand-red/30 flex items-center justify-center text-brand-red mb-4">
+<i class="w-5 h-5" data-lucide="user-check"></i>
+</div>
+<h4 class="text-base font-tech font-bold text-white uppercase">Inclusión &amp; Autonomía</h4>
+<p class="text-xs text-neutral-400 mt-2 leading-relaxed">
+            Facilitar el retorno a actividades laborales y personales sin barreras biomecánicas.
+          </p>
+</div>
+<div class="p-6 bg-brand-card/60 border border-brand-border rounded-xl hover:border-brand-red/50 transition-colors">
+<div class="w-10 h-10 rounded bg-brand-red/10 border border-brand-red/30 flex items-center justify-center text-brand-red mb-4">
+<i class="w-5 h-5" data-lucide="dollar-sign"></i>
+</div>
+<h4 class="text-base font-tech font-bold text-white uppercase">Tecnología Accesible</h4>
+<p class="text-xs text-neutral-400 mt-2 leading-relaxed">
+            Reducir costes de fabricación mediante impresión 3D y componentes estándar para democratizar el acceso.
+          </p>
+</div>
+<div class="p-6 bg-brand-card/60 border border-brand-border rounded-xl hover:border-brand-red/50 transition-colors">
+<div class="w-10 h-10 rounded bg-brand-red/10 border border-brand-red/30 flex items-center justify-center text-brand-red mb-4">
+<i class="w-5 h-5" data-lucide="leaf"></i>
+</div>
+<h4 class="text-base font-tech font-bold text-white uppercase">Producción Sostenible</h4>
+<p class="text-xs text-neutral-400 mt-2 leading-relaxed">
+            Menor huella de carbono y minimización radical de residuos gracias al diseño por módulos y piezas reciclables.
+          </p>
+</div>
+<div class="p-6 bg-brand-card/60 border border-brand-border rounded-xl hover:border-brand-red/50 transition-colors">
+<div class="w-10 h-10 rounded bg-brand-red/10 border border-brand-red/30 flex items-center justify-center text-brand-red mb-4">
+<i class="w-5 h-5" data-lucide="activity"></i>
+</div>
+<h4 class="text-base font-tech font-bold text-white uppercase">Colaboración Clínica</h4>
+<p class="text-xs text-neutral-400 mt-2 leading-relaxed">
+            Co-creación con fisioterapeutas, médicos rehabilitadores y pacientes para máxima efectividad biomecánica.
+          </p>
+</div>
+</div>
+</div>
+</section>
+<!-- END: Impact Section -->
+<!-- BEGIN: Roadmap Section -->
+<section class="py-24 border-t border-brand-border bg-gradient-to-b from-brand-black via-[#090a0f] to-brand-black" data-purpose="roadmap-section" id="roadmap">
+<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+<div class="flex items-center gap-2 mb-3">
+<span class="w-2.5 h-0.5 bg-brand-red"></span>
+<span class="text-xs font-tech tracking-widest text-brand-red uppercase font-semibold">| HOJA DE RUTA</span>
+</div>
+<div class="max-w-3xl mb-16">
+<h2 class="text-3xl sm:text-5xl font-bold font-tech text-white uppercase tracking-tight">
+          Del prototipo a la realidad
+        </h2>
+<p class="mt-4 text-neutral-400 text-sm sm:text-base leading-relaxed">
+          Nuestra ruta de hitos técnicos, certificaciones y desarrollo clínico planificada con rigor y foco en resultados.
+        </p>
+</div>
+<!-- Roadmap Timeline Grid -->
+<div class="grid grid-cols-1 md:grid-cols-4 gap-6 relative">
+<!-- Phase 1 -->
+<div class="p-6 bg-brand-card border border-brand-red/60 rounded-xl relative flex flex-col justify-between">
+<div>
+<div class="flex items-center justify-between mb-4">
+<span class="text-[10px] font-mono tracking-widest text-brand-red uppercase font-bold">FASE 1</span>
+<span class="text-[10px] font-mono px-2 py-0.5 rounded bg-brand-red/20 text-brand-red">2024 - 2025</span>
+</div>
+<h4 class="text-lg font-tech font-bold text-white uppercase">Prototipo Funcional</h4>
+<p class="text-xs text-neutral-400 mt-2 leading-relaxed">
+              Desarrollo de mano protésica modular básica y validación cinemática en laboratorio.
+            </p>
+</div>
+<div class="mt-6 pt-4 border-t border-brand-border text-xs font-mono text-brand-red flex items-center gap-1.5">
+<i class="w-4 h-4" data-lucide="check-circle"></i>
+<span>Completada con éxito</span>
+</div>
+</div>
+<!-- Phase 2 -->
+<div class="p-6 bg-brand-card border border-brand-border hover:border-brand-red/50 rounded-xl relative flex flex-col justify-between">
+<div>
+<div class="flex items-center justify-between mb-4">
+<span class="text-[10px] font-mono tracking-widest text-neutral-400 uppercase font-bold">FASE 2</span>
+<span class="text-[10px] font-mono px-2 py-0.5 rounded bg-neutral-800 text-neutral-300">2025 - 2026</span>
+</div>
+<h4 class="text-lg font-tech font-bold text-white uppercase">Validación Técnica</h4>
+<p class="text-xs text-neutral-400 mt-2 leading-relaxed">
+              Pruebas con usuarios finales, integración de sensórica mioeléctrica refinada y optimización ergonómica.
+            </p>
+</div>
+<div class="mt-6 pt-4 border-t border-brand-border text-xs font-mono text-neutral-400 flex items-center gap-1.5">
+<span class="w-2 h-2 rounded-full bg-amber-400 animate-pulse"></span>
+<span>En ejecución</span>
+</div>
+</div>
+<!-- Phase 3 -->
+<div class="p-6 bg-brand-card border border-brand-border hover:border-brand-red/50 rounded-xl relative flex flex-col justify-between">
+<div>
+<div class="flex items-center justify-between mb-4">
+<span class="text-[10px] font-mono tracking-widest text-neutral-400 uppercase font-bold">FASE 3</span>
+<span class="text-[10px] font-mono px-2 py-0.5 rounded bg-neutral-800 text-neutral-300">2026 - 2027</span>
+</div>
+<h4 class="text-lg font-tech font-bold text-white uppercase">Colaboración Clínica</h4>
+<p class="text-xs text-neutral-400 mt-2 leading-relaxed">
+              Ensayos clínicos multicéntricos, pre-certificación CE de producto sanitario y feedback háptico.
+            </p>
+</div>
+<div class="mt-6 pt-4 border-t border-brand-border text-xs font-mono text-neutral-500 flex items-center gap-1.5">
+<i class="w-4 h-4" data-lucide="clock"></i>
+<span>Planificada</span>
+</div>
+</div>
+<!-- Phase 4 -->
+<div class="p-6 bg-brand-card border border-brand-border hover:border-brand-red/50 rounded-xl relative flex flex-col justify-between">
+<div>
+<div class="flex items-center justify-between mb-4">
+<span class="text-[10px] font-mono tracking-widest text-neutral-400 uppercase font-bold">FASE 4</span>
+<span class="text-[10px] font-mono px-2 py-0.5 rounded bg-neutral-800 text-neutral-300">2027+</span>
+</div>
+<h4 class="text-lg font-tech font-bold text-white uppercase">Lanzamiento &amp; Expansión</h4>
+<p class="text-xs text-neutral-400 mt-2 leading-relaxed">
+              Producción escalable, distribución en centros ortopédicos y primera versión de exoesqueletos adaptativos.
+            </p>
+</div>
+<div class="mt-6 pt-4 border-t border-brand-border text-xs font-mono text-neutral-500 flex items-center gap-1.5">
+<i class="w-4 h-4" data-lucide="target"></i>
+<span>Proyección a futuro</span>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- END: Roadmap Section -->
+<!-- BEGIN: Gallery Section -->
+<section class="py-24 border-t border-brand-border bg-brand-black" data-purpose="gallery-section">
+<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+<div class="flex items-center gap-2 mb-3">
+<span class="w-2.5 h-0.5 bg-brand-red"></span>
+<span class="text-xs font-tech tracking-widest text-brand-red uppercase font-semibold">| GALERÍA</span>
+</div>
+<div class="flex flex-col md:flex-row md:items-end justify-between mb-12">
+<div>
+<h2 class="text-3xl sm:text-5xl font-bold font-tech text-white uppercase tracking-tight">
+            Prototipos y desarrollo
+          </h2>
+<p class="mt-2 text-neutral-400 text-sm">
+            Imágenes del proceso de ingeniería, banco de pruebas de sensores y manufactura digital aditiva.
+          </p>
+</div>
+<div class="mt-4 md:mt-0 flex items-center gap-2">
+<span class="text-xs font-mono text-neutral-400">LABORATORIO NEXO • LA PALMA</span>
+</div>
+</div>
+<!-- Technical Gallery Grid (Vector/CAD Simulation cards) -->
+<div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
+<div class="group relative aspect-square bg-[#0f1118] border border-brand-border rounded-lg overflow-hidden flex flex-col justify-end p-4">
+<div class="absolute inset-0 flex items-center justify-center opacity-30 group-hover:opacity-60 transition-opacity">
+<i class="w-24 h-24 text-neutral-600" data-lucide="microchip"></i>
+</div>
+<div class="relative z-10 bg-brand-black/90 p-3 rounded border border-brand-border">
+<span class="text-[9px] font-mono text-brand-red block">PROCESADOR MIOELÉCTRICO</span>
+<p class="text-xs font-tech font-bold text-white">Placa de control v2.1</p>
+</div>
+</div>
+<div class="group relative aspect-square bg-[#0f1118] border border-brand-border rounded-lg overflow-hidden flex flex-col justify-end p-4">
+<div class="absolute inset-0 flex items-center justify-center opacity-30 group-hover:opacity-60 transition-opacity">
+<i class="w-24 h-24 text-neutral-600" data-lucide="hand"></i>
+</div>
+<div class="relative z-10 bg-brand-black/90 p-3 rounded border border-brand-border">
+<span class="text-[9px] font-mono text-brand-red block">MANUFACTURA ADITIVA</span>
+<p class="text-xs font-tech font-bold text-white">Falanges en poliamida PA12</p>
+</div>
+</div>
+<div class="group relative aspect-square bg-[#0f1118] border border-brand-border rounded-lg overflow-hidden flex flex-col justify-end p-4">
+<div class="absolute inset-0 flex items-center justify-center opacity-30 group-hover:opacity-60 transition-opacity">
+<i class="w-24 h-24 text-neutral-600" data-lucide="activity"></i>
+</div>
+<div class="relative z-10 bg-brand-black/90 p-3 rounded border border-brand-border">
+<span class="text-[9px] font-mono text-brand-red block">CALIBRACIÓN</span>
+<p class="text-xs font-tech font-bold text-white">Banco de pruebas de fatiga</p>
+</div>
+</div>
+<div class="group relative aspect-square bg-[#0f1118] border border-brand-border rounded-lg overflow-hidden flex flex-col justify-end p-4">
+<div class="absolute inset-0 flex items-center justify-center opacity-30 group-hover:opacity-60 transition-opacity">
+<i class="w-24 h-24 text-neutral-600" data-lucide="shield-check"></i>
+</div>
+<div class="relative z-10 bg-brand-black/90 p-3 rounded border border-brand-border">
+<span class="text-[9px] font-mono text-brand-red block">ENSAMBLAJE FINAL</span>
+<p class="text-xs font-tech font-bold text-white">Unidad completa lista para test</p>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- END: Gallery Section -->
+<!-- BEGIN: Contact Section & Form -->
+<section class="py-24 border-t border-brand-border bg-[#07080b] relative" data-purpose="contact-section" id="contacto">
+<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-12">
+<!-- Left: Contact Details -->
+<div class="lg:col-span-5 space-y-6">
+<div class="flex items-center gap-2 mb-2">
+<span class="w-2.5 h-0.5 bg-brand-red"></span>
+<span class="text-xs font-tech tracking-widest text-brand-red uppercase font-semibold">| CONTACTO</span>
+</div>
+<h2 class="text-3xl sm:text-5xl font-bold font-tech text-white uppercase tracking-tight">
+            Hablemos <br/>de futuro
+          </h2>
+<p class="text-neutral-400 text-sm leading-relaxed max-w-sm">
+            Si estás interesado en colaborar, invertir o conocer más sobre nuestros desarrollos biónicos, estaremos encantados de hablar contigo.
+          </p>
+<div class="space-y-4 pt-4">
+<div class="flex items-center gap-3">
+<div class="w-8 h-8 rounded bg-brand-red/10 border border-brand-red/30 flex items-center justify-center text-brand-red">
+<i class="w-4 h-4" data-lucide="mail"></i>
+</div>
+<span class="text-xs font-mono text-neutral-300">info@nexorobotics.com</span>
+</div>
+<div class="flex items-center gap-3">
+<div class="w-8 h-8 rounded bg-brand-red/10 border border-brand-red/30 flex items-center justify-center text-brand-red">
+<i class="w-4 h-4" data-lucide="map-pin"></i>
+</div>
+<span class="text-xs font-mono text-neutral-300">La Palma, Canarias (España)</span>
+</div>
+<div class="flex items-center gap-3">
+<div class="w-8 h-8 rounded bg-brand-red/10 border border-brand-red/30 flex items-center justify-center text-brand-red">
+<i class="w-4 h-4" data-lucide="globe-2"></i>
+</div>
+<span class="text-xs font-mono text-neutral-300">Disponible para colaboraciones en toda Europa</span>
+</div>
+</div>
+</div>
+<!-- Right: Contact Form -->
+<div class="lg:col-span-7 bg-brand-card/70 border border-brand-border rounded-2xl p-6 sm:p-8">
+<form class="space-y-5" onsubmit="handleContactSubmit(event)">
+<div>
+<label class="block text-xs font-mono uppercase text-neutral-300 mb-1.5" for="nombre">Nombre completo</label>
+<input class="w-full bg-[#090a10] border border-brand-border rounded px-4 py-3 text-xs font-mono text-white placeholder-neutral-600 focus:outline-none focus:border-brand-red transition-colors" id="nombre" placeholder="Tu nombre y apellidos" required="" type="text"/>
+</div>
+<div>
+<label class="block text-xs font-mono uppercase text-neutral-300 mb-1.5" for="organizacion">Empresa / Organización / Clínica</label>
+<input class="w-full bg-[#090a10] border border-brand-border rounded px-4 py-3 text-xs font-mono text-white placeholder-neutral-600 focus:outline-none focus:border-brand-red transition-colors" id="organizacion" placeholder="Nombre de tu entidad o particular" type="text"/>
+</div>
+<div>
+<label class="block text-xs font-mono uppercase text-neutral-300 mb-1.5" for="email">Correo electrónico</label>
+<input class="w-full bg-[#090a10] border border-brand-border rounded px-4 py-3 text-xs font-mono text-white placeholder-neutral-600 focus:outline-none focus:border-brand-red transition-colors" id="email" placeholder="tu-email@dominio.com" required="" type="email"/>
+</div>
+<div>
+<label class="block text-xs font-mono uppercase text-neutral-300 mb-1.5" for="mensaje">Mensaje</label>
+<textarea class="w-full bg-[#090a10] border border-brand-border rounded px-4 py-3 text-xs font-mono text-white placeholder-neutral-600 focus:outline-none focus:border-brand-red transition-colors" id="mensaje" placeholder="Cuéntanos sobre tu interés, propuesta o consulta..." required="" rows="4"></textarea>
+</div>
+<button class="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-8 py-3.5 bg-brand-red hover:bg-brand-redHover text-white font-tech font-semibold text-xs tracking-wider uppercase rounded transition-colors shadow" type="submit">
+<span>ENVIAR MENSAJE</span>
+<i class="w-4 h-4" data-lucide="arrow-right"></i>
+</button>
+<p class="text-xs font-mono text-emerald-400 hidden" id="form-feedback">✓ Gracias por tu mensaje. Responderemos en menos de 24 horas laborables.</p>
+</form>
+</div>
+</div>
+</div>
+</section>
+<!-- END: Contact Section & Form -->
+<!-- BEGIN: Site Footer -->
+<footer class="border-t border-brand-border bg-[#050507] py-12" data-purpose="site-footer">
+<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+<div class="flex flex-col md:flex-row items-center justify-between gap-6 pb-8 border-b border-brand-border/60">
+<!-- Brand & Slogan -->
+<div class="flex items-center gap-3">
+<span class="text-xl font-tech font-bold tracking-wider text-white">NEXO</span>
+<span class="text-neutral-500 font-mono text-xs">/</span>
+<span class="text-xs font-tech tracking-[0.2em] text-neutral-400 uppercase">HUMAN POTENTIAL EXTENDED</span>
+</div>
+<!-- Social Icons -->
+<div class="flex items-center gap-4 text-neutral-400">
+<a aria-label="LinkedIn" class="p-2 rounded hover:text-brand-red hover:bg-brand-card transition-colors" href="#">
+<i class="w-4 h-4" data-lucide="linkedin"></i>
+</a>
+<a aria-label="YouTube" class="p-2 rounded hover:text-brand-red hover:bg-brand-card transition-colors" href="#">
+<i class="w-4 h-4" data-lucide="youtube"></i>
+</a>
+<a aria-label="Instagram" class="p-2 rounded hover:text-brand-red hover:bg-brand-card transition-colors" href="#">
+<i class="w-4 h-4" data-lucide="instagram"></i>
+</a>
+</div>
+</div>
+<!-- Copyright & Legal -->
+<div class="flex flex-col sm:flex-row items-center justify-between gap-4 pt-6 text-[11px] font-mono text-neutral-500">
+<p>© 2025 NEXO Robotics. Todos los derechos reservados.</p>
+<div class="flex items-center gap-6">
+<a class="hover:text-neutral-300 transition-colors" href="#">Aviso legal</a>
+<a class="hover:text-neutral-300 transition-colors" href="#">Privacidad</a>
+<a class="hover:text-neutral-300 transition-colors" href="#">Cookies</a>
+</div>
+</div>
+</div>
+</footer>
+<!-- END: Site Footer -->
+<!-- BEGIN: Scripts for Interactivity & Icons -->
+<script data-purpose="icon-initialization">
+    // Initialize Lucide icons
+    lucide.createIcons();
+  </script>
+<script data-purpose="ui-interactions">
+    // Interactive Hand Grips Selector Logic
+    function setGrip(name, description) {
+      const gripNameEl = document.getElementById('grip-name');
+      const gripDescEl = document.getElementById('grip-desc');
+      if (gripNameEl && gripDescEl) {
+        gripNameEl.textContent = name;
+        gripDescEl.textContent = description;
+      }
+    }
+
+    // Contact Form handling
+    function handleContactSubmit(event) {
+      event.preventDefault();
+      const feedback = document.getElementById('form-feedback');
+      if (feedback) {
+        feedback.classList.remove('hidden');
+      }
+      event.target.reset();
+    }
+  </script>
+<!-- END: Scripts for Interactivity & Icons -->
+</body></html> 
