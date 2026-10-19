@@ -1,0 +1,197 @@
+<!-- BEGIN: Products Section -->
+<section class="py-24 border-t border-brand-border bg-brand-black relative" data-purpose="products-section" id="productos">
+<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+<!-- Section Tag -->
+<div class="flex items-center gap-2 mb-3">
+<span class="w-2.5 h-0.5 bg-brand-red"></span>
+<span class="text-xs font-tech tracking-widest text-brand-red uppercase font-semibold">| PRODUCTO 01</span>
+</div>
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center mb-24">
+<!-- Left Column: Hand Info -->
+<div class="lg:col-span-6 space-y-6">
+<h2 class="text-3xl sm:text-5xl font-bold font-tech text-white uppercase tracking-tight">
+            Prótesis Robótica Modular
+          </h2>
+<p class="text-neutral-400 text-sm sm:text-base leading-relaxed">
+            Una mano protésica avanzada, personalizable y funcional, diseñada para adaptarse a las necesidades reales de cada usuario y facilitar actividades de la vida diaria con máxima fiabilidad.
+          </p>
+<!-- Product Badges & Specifications Grid -->
+<div class="grid grid-cols-2 gap-3 pt-2">
+<div class="p-3 bg-brand-card/70 border border-brand-border rounded flex items-center gap-2.5">
+<i class="w-4 h-4 text-brand-red" data-lucide="hand"></i>
+<span class="text-xs font-mono text-neutral-300">Múltiples tipos de agarre</span>
+</div>
+<div class="p-3 bg-brand-card/70 border border-brand-border rounded flex items-center gap-2.5">
+<i class="w-4 h-4 text-brand-red" data-lucide="cpu"></i>
+<span class="text-xs font-mono text-neutral-300">Diseño 100% modular</span>
+</div>
+<div class="p-3 bg-brand-card/70 border border-brand-border rounded flex items-center gap-2.5">
+<i class="w-4 h-4 text-brand-red" data-lucide="scan"></i>
+<span class="text-xs font-mono text-neutral-300">Personalización 3D</span>
+</div>
+<div class="p-3 bg-brand-card/70 border border-brand-border rounded flex items-center gap-2.5">
+<i class="w-4 h-4 text-brand-red" data-lucide="activity"></i>
+<span class="text-xs font-mono text-neutral-300">Control mioeléctrico</span>
+</div>
+<div class="p-3 bg-brand-card/70 border border-brand-border rounded flex items-center gap-2.5">
+<i class="w-4 h-4 text-brand-red" data-lucide="rotate-cw"></i>
+<span class="text-xs font-mono text-neutral-300">Reparabilidad directa</span>
+</div>
+<div class="p-3 bg-brand-card/70 border border-brand-border rounded flex items-center gap-2.5">
+<i class="w-4 h-4 text-brand-red" data-lucide="radio"></i>
+<span class="text-xs font-mono text-neutral-300">Sensores táctiles (I+D)</span>
+</div>
+</div>
+<!-- CTA -->
+<div class="pt-4">
+<a class="inline-flex items-center gap-2 px-6 py-3 bg-brand-red hover:bg-brand-redHover text-white font-tech font-semibold text-xs tracking-wider uppercase rounded transition-colors shadow" href="#contacto">
+<span>VER DETALLES</span>
+<i class="w-4 h-4" data-lucide="arrow-right"></i>
+</a>
+</div>
+</div>
+<!-- Right Column: Interactive Hand Grips Viewer -->
+<div class="lg:col-span-6 bg-[#0e1017] border border-brand-border rounded-2xl p-6 sm:p-8 flex flex-col justify-between">
+<div class="flex items-center justify-between border-b border-brand-border/60 pb-3 mb-6">
+<span class="text-[10px] font-mono tracking-widest text-brand-red uppercase">PATRONES DE AGARRE PROGRAMADOS</span>
+<span class="text-[10px] font-mono text-neutral-400">NEXO GRIP ENGINE v1.2</span>
+</div>
+<!-- Visual Display of Selected Grip -->
+<div class="h-64 flex flex-col items-center justify-center relative bg-gradient-to-b from-black/40 to-transparent rounded-lg border border-brand-border/40 p-4">
+<div class="relative w-40 h-40 flex items-center justify-center">
+<!-- Mechanical Grip Vector Graphic -->
+<svg class="w-full h-full text-white" fill="none" stroke="currentColor" viewbox="0 0 100 100">
+<circle cx="50" cy="50" r="42" stroke="#252733" stroke-dasharray="2 2" stroke-width="1.5"></circle>
+<path d="M40 75 L45 55 L50 40 L50 25" stroke="#ff2a2a" stroke-linecap="round" stroke-width="3"></path>
+<path d="M50 75 L50 55 L55 35 L60 20" stroke="white" stroke-linecap="round" stroke-width="2.5"></path>
+<path d="M60 75 L55 55 L65 42 L72 30" stroke="white" stroke-linecap="round" stroke-width="2.5"></path>
+<path d="M30 65 L36 50 L42 42" stroke="#ff2a2a" stroke-linecap="round" stroke-width="3"></path>
+<circle cx="50" cy="75" fill="#ff2a2a" r="5"></circle>
+<circle cx="50" cy="40" fill="#fff" r="2.5"></circle>
+</svg>
+</div>
+<div class="text-center mt-2">
+<span class="text-base font-tech font-bold text-white uppercase tracking-wider" id="grip-name">Agarre de Precisión</span>
+<p class="text-[11px] font-mono text-neutral-400 mt-0.5" id="grip-desc">Pinza fina para sujeción de objetos pequeños (llaves, bolígrafos, monedas).</p>
+</div>
+</div>
+<!-- Grip Selector Thumbnails -->
+<div class="grid grid-cols-5 gap-2 mt-6 pt-4 border-t border-brand-border/60" data-purpose="grip-selector">
+<button class="p-2 bg-brand-card hover:border-brand-red border border-brand-border rounded text-center transition-colors" onclick="setGrip('Agarre de Precisión', 'Pinza fina para sujeción de objetos pequeños (llaves, bolígrafos, monedas).')" type="button">
+<i class="w-4 h-4 mx-auto text-brand-red mb-1" data-lucide="mouse-pointer"></i>
+<span class="text-[9px] font-mono text-neutral-300 block truncate">Precisión</span>
+</button>
+<button class="p-2 bg-brand-card hover:border-brand-red border border-brand-border rounded text-center transition-colors" onclick="setGrip('Agarre Cilíndrico', 'Fuerza circunferencial optimizada para vasos, botellas y mangos.')" type="button">
+<i class="w-4 h-4 mx-auto text-neutral-400 mb-1" data-lucide="cylinder"></i>
+<span class="text-[9px] font-mono text-neutral-300 block truncate">Cilíndrico</span>
+</button>
+<button class="p-2 bg-brand-card hover:border-brand-red border border-brand-border rounded text-center transition-colors" onclick="setGrip('Agarre de Pinza', 'Alineación de pulgar e índice para acciones cotidianas rápidas.')" type="button">
+<i class="w-4 h-4 mx-auto text-neutral-400 mb-1" data-lucide="scissors"></i>
+<span class="text-[9px] font-mono text-neutral-300 block truncate">Pinza</span>
+</button>
+<button class="p-2 bg-brand-card hover:border-brand-red border border-brand-border rounded text-center transition-colors" onclick="setGrip('Agarre Esférico', 'Apertura multidireccional amplia para esferas, frutas y pomos.')" type="button">
+<i class="w-4 h-4 mx-auto text-neutral-400 mb-1" data-lucide="circle-dot"></i>
+<span class="text-[9px] font-mono text-neutral-300 block truncate">Esférico</span>
+</button>
+<button class="p-2 bg-brand-card hover:border-brand-red border border-brand-border rounded text-center transition-colors" onclick="setGrip('Agarre Lateral', 'Sujeción lateral tipo tarjeta de crédito o documento plano.')" type="button">
+<i class="w-4 h-4 mx-auto text-neutral-400 mb-1" data-lucide="credit-card"></i>
+<span class="text-[9px] font-mono text-neutral-300 block truncate">Lateral</span>
+</button>
+</div>
+</div>
+</div>
+<!-- BEGIN: Exoesqueletos Adaptativos -->
+<div class="border-t border-brand-border/80 pt-20" id="exoesqueletos">
+<div class="flex items-center gap-2 mb-3">
+<span class="w-2.5 h-0.5 bg-brand-red"></span>
+<span class="text-xs font-tech tracking-widest text-brand-red uppercase font-semibold">| PRODUCTO 02</span>
+</div>
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+<!-- Left Visual: Exoskeleton Mockup & Specs -->
+<div class="lg:col-span-6 order-2 lg:order-1 bg-[#0e1017] border border-brand-border rounded-2xl p-6 sm:p-8 relative">
+<div class="flex items-center justify-between border-b border-brand-border/60 pb-3 mb-6">
+<span class="text-[10px] font-mono tracking-widest text-brand-red uppercase">LOWER LIMB EXOSKELETON • I+D</span>
+<span class="px-2 py-0.5 rounded text-[9px] font-mono bg-red-950/60 text-red-400 border border-brand-red/40">FASE PROTOTIPO</span>
+</div>
+<div class="relative py-8 flex items-center justify-center">
+<!-- Futuristic Exoskeleton Leg Schematic -->
+<svg class="w-full max-w-[280px]" fill="none" viewbox="0 0 320 380" xmlns="http://www.w3.org/2000/svg">
+<!-- Hip joint -->
+<circle cx="160" cy="50" fill="#12131a" r="22" stroke="#ff2a2a" stroke-width="2"></circle>
+<circle cx="160" cy="50" fill="#ff2a2a" r="8"></circle>
+<text fill="#a0a3b1" font-family="Space Grotesk" font-size="9" x="190" y="54">ACTUADOR DE CADERA</text>
+<!-- Femur structural strut -->
+<line stroke="#ffffff" stroke-linecap="round" stroke-width="4" x1="160" x2="160" y1="72" y2="180"></line>
+<line stroke="#ff2a2a" stroke-linecap="round" stroke-width="2" x1="172" x2="172" y1="85" y2="168"></line>
+<!-- Knee Joint & Harmonic Drive -->
+<circle cx="160" cy="200" fill="#181924" r="20" stroke="#ff2a2a" stroke-width="2.5"></circle>
+<circle cx="160" cy="200" r="10" stroke="#ffffff" stroke-width="1.5"></circle>
+<line stroke="rgba(255,42,42,0.6)" stroke-dasharray="2 2" stroke-width="1" x1="160" x2="70" y1="200" y2="200"></line>
+<text fill="#ff2a2a" font-family="Space Grotesk" font-size="9" x="15" y="203">RODILLA INTELIGENTE</text>
+<!-- Tibia structural strut -->
+<line stroke="#ffffff" stroke-linecap="round" stroke-width="4" x1="160" x2="160" y1="220" y2="320"></line>
+<!-- Ankle Foot Orthosis -->
+<path d="M160 320 L160 350 L210 350" stroke="#ff2a2a" stroke-linecap="round" stroke-linejoin="round" stroke-width="3"></path>
+<circle cx="160" cy="335" fill="#ffffff" r="6"></circle>
+</svg>
+</div>
+<div class="grid grid-cols-3 gap-3 border-t border-brand-border/60 pt-4 text-center">
+<div>
+<p class="text-[9px] font-mono text-neutral-500 uppercase">Torque</p>
+<p class="text-xs font-tech font-bold text-white">45 Nm</p>
+</div>
+<div>
+<p class="text-[9px] font-mono text-neutral-500 uppercase">Respuesta</p>
+<p class="text-xs font-tech font-bold text-brand-red">&lt; 10 ms</p>
+</div>
+<div>
+<p class="text-[9px] font-mono text-neutral-500 uppercase">Estructura</p>
+<p class="text-xs font-tech font-bold text-white">Fibra Carbono</p>
+</div>
+</div>
+</div>
+<!-- Right Copy: Details -->
+<div class="lg:col-span-6 order-1 lg:order-2 space-y-6">
+<h2 class="text-3xl sm:text-5xl font-bold font-tech text-white uppercase tracking-tight">
+              Exoesqueletos Adaptativos
+            </h2>
+<p class="text-neutral-400 text-sm sm:text-base leading-relaxed">
+              En desarrollo: exoesqueletos de miembro inferior diseñados para rehabilitación, asistencia a la movilidad y aumento de la autonomía de personas en proceso de recuperación motora.
+            </p>
+<!-- Feature Bullet List -->
+<div class="space-y-3 pt-2">
+<div class="flex items-center gap-3">
+<div class="w-2 h-2 rounded-full bg-brand-red"></div>
+<span class="text-xs sm:text-sm font-mono text-neutral-200">Rehabilitación asistida programable</span>
+</div>
+<div class="flex items-center gap-3">
+<div class="w-2 h-2 rounded-full bg-brand-red"></div>
+<span class="text-xs sm:text-sm font-mono text-neutral-200">Sensores inerciales (IMU) de alta cadencia</span>
+</div>
+<div class="flex items-center gap-3">
+<div class="w-2 h-2 rounded-full bg-brand-red"></div>
+<span class="text-xs sm:text-sm font-mono text-neutral-200">Adaptación en tiempo real a la marcha</span>
+</div>
+<div class="flex items-center gap-3">
+<div class="w-2 h-2 rounded-full bg-brand-red"></div>
+<span class="text-xs sm:text-sm font-mono text-neutral-200">Diseño ultra-ligero y ergonómico</span>
+</div>
+<div class="flex items-center gap-3">
+<div class="w-2 h-2 rounded-full bg-brand-red"></div>
+<span class="text-xs sm:text-sm font-mono text-neutral-200">Aplicaciones clínicas y de uso cotidiano</span>
+</div>
+</div>
+<!-- CTA -->
+<div class="pt-4">
+<a class="inline-flex items-center gap-2 px-6 py-3 bg-brand-red/90 hover:bg-brand-red text-white font-tech font-semibold text-xs tracking-wider uppercase rounded transition-colors shadow" href="#contacto">
+<span>PRÓXIMAMENTE — SOLICITAR DOSSIER</span>
+<i class="w-4 h-4" data-lucide="arrow-right"></i>
+</a>
+</div>
+</div>
+</div>
+</div>
+<!-- END: Exoesqueletos Adaptativos -->
+</div>
+</section>
+<!-- END: Products Section -->

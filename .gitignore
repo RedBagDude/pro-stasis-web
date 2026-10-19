@@ -1,0 +1,13 @@
+# site / build output
+index.html
+node_modules/
+
+# OS / editor
+.DS_Store
+Thumbs.db
+*.log
+.vscode/
+.idea/
+
+# env
+.env

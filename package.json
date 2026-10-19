@@ -1,0 +1,9 @@
+{
+  "name": "pro-stasis-web",
+  "version": "1.0.0",
+  "description": "Web corporativa de NEXO Robotics — sitio estático HTML/CSS/JS organizado en módulos",
+  "private": true,
+  "scripts": {
+    "build": "node tools/build.js"
+  }
+}

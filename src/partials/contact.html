@@ -1,0 +1,67 @@
+<!-- BEGIN: Contact Section & Form -->
+<section class="py-24 border-t border-brand-border bg-[#07080b] relative" data-purpose="contact-section" id="contacto">
+<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-12">
+<!-- Left: Contact Details -->
+<div class="lg:col-span-5 space-y-6">
+<div class="flex items-center gap-2 mb-2">
+<span class="w-2.5 h-0.5 bg-brand-red"></span>
+<span class="text-xs font-tech tracking-widest text-brand-red uppercase font-semibold">| CONTACTO</span>
+</div>
+<h2 class="text-3xl sm:text-5xl font-bold font-tech text-white uppercase tracking-tight">
+            Hablemos <br/>de futuro
+          </h2>
+<p class="text-neutral-400 text-sm leading-relaxed max-w-sm">
+            Si estás interesado en colaborar, invertir o conocer más sobre nuestros desarrollos biónicos, estaremos encantados de hablar contigo.
+          </p>
+<div class="space-y-4 pt-4">
+<div class="flex items-center gap-3">
+<div class="w-8 h-8 rounded bg-brand-red/10 border border-brand-red/30 flex items-center justify-center text-brand-red">
+<i class="w-4 h-4" data-lucide="mail"></i>
+</div>
+<span class="text-xs font-mono text-neutral-300">info@nexorobotics.com</span>
+</div>
+<div class="flex items-center gap-3">
+<div class="w-8 h-8 rounded bg-brand-red/10 border border-brand-red/30 flex items-center justify-center text-brand-red">
+<i class="w-4 h-4" data-lucide="map-pin"></i>
+</div>
+<span class="text-xs font-mono text-neutral-300">La Palma, Canarias (España)</span>
+</div>
+<div class="flex items-center gap-3">
+<div class="w-8 h-8 rounded bg-brand-red/10 border border-brand-red/30 flex items-center justify-center text-brand-red">
+<i class="w-4 h-4" data-lucide="globe-2"></i>
+</div>
+<span class="text-xs font-mono text-neutral-300">Disponible para colaboraciones en toda Europa</span>
+</div>
+</div>
+</div>
+<!-- Right: Contact Form -->
+<div class="lg:col-span-7 bg-brand-card/70 border border-brand-border rounded-2xl p-6 sm:p-8">
+<form class="space-y-5" onsubmit="handleContactSubmit(event)">
+<div>
+<label class="block text-xs font-mono uppercase text-neutral-300 mb-1.5" for="nombre">Nombre completo</label>
+<input class="w-full bg-[#090a10] border border-brand-border rounded px-4 py-3 text-xs font-mono text-white placeholder-neutral-600 focus:outline-none focus:border-brand-red transition-colors" id="nombre" placeholder="Tu nombre y apellidos" required="" type="text"/>
+</div>
+<div>
+<label class="block text-xs font-mono uppercase text-neutral-300 mb-1.5" for="organizacion">Empresa / Organización / Clínica</label>
+<input class="w-full bg-[#090a10] border border-brand-border rounded px-4 py-3 text-xs font-mono text-white placeholder-neutral-600 focus:outline-none focus:border-brand-red transition-colors" id="organizacion" placeholder="Nombre de tu entidad o particular" type="text"/>
+</div>
+<div>
+<label class="block text-xs font-mono uppercase text-neutral-300 mb-1.5" for="email">Correo electrónico</label>
+<input class="w-full bg-[#090a10] border border-brand-border rounded px-4 py-3 text-xs font-mono text-white placeholder-neutral-600 focus:outline-none focus:border-brand-red transition-colors" id="email" placeholder="tu-email@dominio.com" required="" type="email"/>
+</div>
+<div>
+<label class="block text-xs font-mono uppercase text-neutral-300 mb-1.5" for="mensaje">Mensaje</label>
+<textarea class="w-full bg-[#090a10] border border-brand-border rounded px-4 py-3 text-xs font-mono text-white placeholder-neutral-600 focus:outline-none focus:border-brand-red transition-colors" id="mensaje" placeholder="Cuéntanos sobre tu interés, propuesta o consulta..." required="" rows="4"></textarea>
+</div>
+<button class="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-8 py-3.5 bg-brand-red hover:bg-brand-redHover text-white font-tech font-semibold text-xs tracking-wider uppercase rounded transition-colors shadow" type="submit">
+<span>ENVIAR MENSAJE</span>
+<i class="w-4 h-4" data-lucide="arrow-right"></i>
+</button>
+<p class="text-xs font-mono text-emerald-400 hidden" id="form-feedback">✓ Gracias por tu mensaje. Responderemos en menos de 24 horas laborables.</p>
+</form>
+</div>
+</div>
+</div>
+</section>
+<!-- END: Contact Section & Form -->
