@@ -2,7 +2,7 @@
 
 Web corporativa de **NEXO Robotics** — *Tecnología que devuelve posibilidades*.
 
-Sitio estático de una sola página para una empresa de prótesis robóticas y exoesqueletos (La Palma, Islas Canarias). El contenido original se reorganizó en una estructura modular **sin alterar ni una línea de su funcionalidad**: diseño, interacciones y contenido son byte a byte comparables al archivo original (ver [Convenciones › QA](#checklist-qa)).
+Sitio estático de una sola página para una empresa de prótesis robóticas y exoesqueletos (La Palma, Islas Canarias). El contenido original se reorganizó en una estructura modular **sin alterar su funcionalidad**: el diseño, las interacciones y el contenido son comparables byte a byte con el archivo original (ver [Checklist QA](#checklist-qa)).
 
 ---
 
@@ -10,10 +10,10 @@ Sitio estático de una sola página para una empresa de prótesis robóticas y e
 
 | Capa | Tecnología | Dónde vive |
 |---|---|---|
-| Marcado | HTML5 semántico | `src/partials/` (partiales) + `src/index.template.html` |
+| Marcado | HTML5 semántico | `src/partials/` (parciales) + `src/index.template.html` |
 | Estilos | Tailwind CSS v3 (CDN Play) + CSS propio | HTML (clases utilitarias) + `src/styles/main.css` |
-| Config Tailwind | Objeto `tailwind.config` | `src/config/tailwind.config.js` |
-| Iconografía | Lucide (CDN) | `<i data-lucide="...">` en partiales |
+| Configuración de Tailwind | Objeto `tailwind.config` | `src/config/tailwind.config.js` |
+| Iconografía | Lucide (CDN) | `<i data-lucide="...">` en parciales |
 | Interacción | JavaScript clásico (sin frameworks) | `src/scripts/*.js` |
 | Build | Node puro, **0 dependencias** | `tools/build.js` |
 
@@ -70,25 +70,25 @@ npm run build          # equivalente a: node tools/build.js
 npx serve .
 ```
 
-Después de editar cualquier archivo de `src/`, ejecuta `npm run build` y recarga el navegador. **El flujo de trabajo es: se edita `src/`, nunca `index.html`** (es un artefacto generado y está en `.gitignore`).
+Después de editar cualquier archivo de `src/`, ejecuta `npm run build` y recarga el navegador. **El flujo de trabajo consiste en editar `src/` y nunca `index.html`** (es un artefacto generado y está en `.gitignore`).
 
 > Los CDNs (Tailwind Play, Lucide, Google Fonts) requieren conexión a internet.
 
 ## Convenciones
 
-Son las reglas que este proyecto se impone a sí mismo. Si presentan una excepción, se documenta aquí.
+Son las reglas que este proyecto se impone a sí mismo. Si surge una excepción, se documenta aquí.
 
 ### Archivos y carpetas
 
 - Nombres en `kebab-case`: `grip-selector.js`, `index.template.html`.
 - Un parcial `<nombre>.html` toma su nombre del `id` de ancla de la sección que contiene (`hero.html` ↔ `#inicio`, `technology.html` ↔ `#tecnologia`, …).
-- Las visitas de nombre van en singular intentando describir contenido, no forma.
+- Los nombres de archivo van en singular e intentan describir el contenido, no la forma.
 
 ### HTML
 
 - **1 parcial = 1 `<section>` de nivel superior** (o `header`/`footer` del documento).
 - Los sub-bloques internos **no** se extraen a otro parcial para no romper el flujo del documento (p. ej. `#exoesqueletos` vive dentro de `products.html` porque comparte el contenedor).
-- Los partiales **nunca** contienen `<html>`, `<body>` ni estructura del documento: eso lo posee `src/index.template.html`.
+- Los parciales **nunca** contienen `<html>`, `<body>` ni estructura del documento: eso lo posee `src/index.template.html`.
 - Cada parcial se abre y cierra con los comentarios `<!-- BEGIN: Nombre -->` / `<!-- END: Nombre -->` heredados del original: son el límite natural de cada módulo.
 - Se preservan siempre: `data-purpose` (marcadores semánticos), todos los `id` de ancla y los atributos `aria-label` de los enlaces de solo icono.
 - El formato del marcado (indentación heredada) se respeta tal cual; se normaliza solo al editar un parcial por primera vez y sin mezclar el cambio de formato con cambios de contenido.
@@ -103,7 +103,7 @@ Son las reglas que este proyecto se impone a sí mismo. Si presentan una excepci
 
 - Todo CSS propio vive en `src/styles/`; se carga con `<link>` desde `head.html`.
 - Los bloques se delimitan con comentarios `/* == Nombre del bloque == */`.
-- cualquier estilo nuevo se añade al final en su propio bloque, sin tocar los existentes.
+- Cualquier estilo nuevo se añade al final, en su propio bloque, sin tocar los existentes.
 
 ### Tailwind
 
@@ -113,14 +113,14 @@ Son las reglas que este proyecto se impone a sí mismo. Si presentan una excepci
 
 ### JavaScript
 
-- Scripts clásicos (no módulos): las invocaciones llegan por atributos (`onclick`, `onsubmit`) y por el CDN de Lucide, así que el orden y el punto de ejecución de los `<script>` emulan exactamente al archivo original (al final de `<body>`, sin `defer` ni `async`).
+- Scripts clásicos (no módulos): las invocaciones llegan por atributos (`onclick`, `onsubmit`) y por el CDN de Lucide, así que el orden y el punto de ejecución de los `<script>` emulan exactamente los del archivo original (al final de `<body>`, sin `defer` ni `async`).
 - **1 archivo = 1 funcionalidad**, y el archivo lo declara con un comentario de cabecera.
 - Las funciones que se invocan desde atributos HTML se exponen explícitamente: `window.nombreFuncion = nombreFuncion;` al final del archivo (declaración redundante pero deliberada: hace visible la interfaz global).
 - No se introducen frameworks ni bundlers; cualquier dependencia nueva debe justificarse en este README.
 
 ### Iconos
 
-- Se usan `<i data-lucide="nombre-icono">` en los partiales; Lucide los reemplaza por `<svg>` en runtime vía `lucide.createIcons()` (`src/scripts/main.js`).
+- Se usan `<i data-lucide="nombre-icono">` en los parciales; Lucide los reemplaza por `<svg>` en runtime vía `lucide.createIcons()` (`src/scripts/main.js`).
 - Si un icono desaparece de la librería (p. ej. `linkedin`, `youtube`, `instagram` deprecados en builds recientes) se conserva su marcado original: se documentó el pendiente, pero corregirlo entra por el flujo normal de issues, no como hotfix silencioso.
 
 ### Idioma
@@ -144,7 +144,7 @@ Comprobaciones recursivas tras cualquier cambio (automatizable con Playwright o 
 | 3 | Iconografía | 53 iconos Lucide renderizados; solo `linkedin`/`youtube`/`instagram` quedan pendientes (deprecados upstream, igual que en el original) |
 | 4 | Selector de agarres | Los 5 botones actualizan `#grip-name` y `#grip-desc` |
 | 5 | Formulario | Al enviar con campos válidos: `#form-feedback` visible y campos vacíos |
-| 6 | Anclas | Existem: `inicio`, `tecnologia`, `productos`, `exoesqueletos`, `empresa`, `colaboracion`, `impacto`, `roadmap`, `contacto` |
+| 6 | Anclas | Existen: `inicio`, `tecnologia`, `productos`, `exoesqueletos`, `empresa`, `colaboracion`, `impacto`, `roadmap`, `contacto` |
 
 Última verificación completa: ejecutada con Playwright contra `docs/original-v1.html` e `index.html` — resultados idénticos en ambos.
 
