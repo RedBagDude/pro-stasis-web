@@ -151,3 +151,17 @@ Comprobaciones recursivas tras cualquier cambio (automatizable con Playwright o 
 ## Licencia
 
 © 2025 NEXO Robotics. Todos los derechos reservados. (TODO: definir licencia si el proyecto se publica.)
+
+## Preguntas frecuentes y criterios de mantenimiento
+
+¿Por qué no debo editar index.html? Porque es un artefacto generado a partir de src y está en .gitignore; los cambios deben realizarse en los parciales, estilos, scripts o configuración y después regenerarlo.
+
+¿Qué ocurre si falta un parcial o queda una directiva sin resolver? El build falla con error, así que conviene revisar las rutas relativas y el orden de inclusión definido en la plantilla.
+
+¿Cómo se mantiene la equivalencia con el sitio original? Se conservan los id de ancla, los atributos data-purpose y los aria-label de enlaces de solo icono; docs/original-v1.html sirve como referencia para las comprobaciones.
+
+¿Puedo dividir un sub-bloque en otro parcial? No por defecto: cada parcial equivale a una sección superior y los sub-bloques que comparten contenedor permanecen juntos para no romper el flujo del documento.
+
+¿Qué revisar tras un cambio? Ejecutar el build y repetir el checklist QA; recordar que los CDNs requieren conexión y que ciertos iconos pueden quedar pendientes si están deprecados upstream.
+
+¿Se pueden añadir dependencias? No se introducen frameworks ni bundlers sin justificarlo en este README; el build actual usa Node puro y cero dependencias, y toda excepción a las convenciones debe quedar documentada aquí.
