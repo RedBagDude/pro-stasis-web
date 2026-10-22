@@ -165,3 +165,19 @@ Comprobaciones recursivas tras cualquier cambio (automatizable con Playwright o 
 ¿Qué revisar tras un cambio? Ejecutar el build y repetir el checklist QA; recordar que los CDNs requieren conexión y que ciertos iconos pueden quedar pendientes si están deprecados upstream.
 
 ¿Se pueden añadir dependencias? No se introducen frameworks ni bundlers sin justificarlo en este README; el build actual usa Node puro y cero dependencias, y toda excepción a las convenciones debe quedar documentada aquí.
+
+## Notas de continuidad para futuras modificaciones
+
+Antes de tocar el sitio, conviene recordar que el punto de partida siempre es `src/` y que `index.html` solo se regenera mediante el build; nunca debe editarse a mano.
+
+Cualquier cambio en parciales, estilos, scripts o configuración debe ir seguido de una regeneración y de una revisión del checklist QA para confirmar que el resultado sigue siendo equivalente al original.
+
+La referencia para comparar el comportamiento y el contenido es `docs/original-v1.html`, que conserva el archivo único previo a la modularización.
+
+Al ajustar marcado, mantén los identificadores de ancla, los atributos de propósito semántico y las etiquetas accesibles de los enlaces de solo icono, porque son parte de la equivalencia funcional.
+
+Si un icono aparece como pendiente por haber sido deprecado en la librería, no lo sustituyas de forma silenciosa: déjalo documentado y trátalo por el flujo normal de incidencias.
+
+Ten en cuenta que los recursos cargados desde CDN requieren conexión a internet, por lo que las comprobaciones visuales deben hacerse en un entorno con acceso a la red.
+
+Cualquier dependencia, framework o cambio que se aparte de las convenciones debe justificarse en este README antes de incorporarse, para que la decisión quede trazable.
