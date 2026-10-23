@@ -181,3 +181,15 @@ Si un icono aparece como pendiente por haber sido deprecado en la librería, no 
 Ten en cuenta que los recursos cargados desde CDN requieren conexión a internet, por lo que las comprobaciones visuales deben hacerse en un entorno con acceso a la red.
 
 Cualquier dependencia, framework o cambio que se aparte de las convenciones debe justificarse en este README antes de incorporarse, para que la decisión quede trazable.
+
+## Alcance actual y límites conocidos
+
+El sitio es una página estática de presentación: no existe backend ni persistencia de datos, y el formulario de contacto se resuelve íntegramente en el navegador mostrando el bloque de confirmación previsto.
+
+La apariencia depende de recursos cargados desde CDN para estilos utilitarios, tipografías e iconografía, por lo que sin conexión a internet el resultado visual puede diferir de la versión de referencia.
+
+La iconografía se genera en tiempo de ejecución, así que algunos iconos sociales pueden quedar pendientes si la librería los ha deprecado; se asume como limitación conocida y se trata por el cauce habitual de incidencias.
+
+La licencia aún está por definir, de modo que conviene no reutilizar el contenido hasta que esa decisión quede documentada en este archivo.
+
+Cualquier ampliación que implique datos dinámicos, dependencias externas o un cambio de alcance debe justificarse y reflejarse aquí antes de llevarse a cabo.
