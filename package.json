@@ -5,6 +5,8 @@
   "private": true,
   "scripts": {
     "start": "cd frontend && npm start",
-    "build": "cd frontend && npm run build"
+    "build": "cd frontend && npm run build",
+    "export": "node package_deploy.js",
+    "pack": "node package_deploy.js"
   }
 }

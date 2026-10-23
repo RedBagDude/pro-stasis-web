@@ -1,0 +1,15 @@
+<IfModule mod_rewrite.c>
+  RewriteEngine On
+  RewriteBase /
+
+  # 1. No interferir con las peticiones a la API en PHP
+  RewriteRule ^api/ - [L]
+
+  # 2. Si el archivo o carpeta existe físicamente (imágenes, js, css, etc.), servirlo
+  RewriteCond %{REQUEST_FILENAME} -f [OR]
+  RewriteCond %{REQUEST_FILENAME} -d
+  RewriteRule ^ - [L]
+
+  # 3. Cualquier otra ruta redirigirla a index.html (SPA de Angular)
+  RewriteRule ^ index.html [L]
+</IfModule>

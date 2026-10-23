@@ -45,13 +45,29 @@ La web se abre en: `http://localhost:4200`
 
 ---
 
-## Cómo subirlo al Hosting de tu dominio
+## Cómo subirlo al Hosting de tu dominio (Producción)
 
-1. Compila el frontend:
-   ```bash
-   cd frontend
-   npm run build
-   ```
-2. Sube el contenido de `frontend/dist/frontend/browser/` a la carpeta raíz de tu hosting (`public_html/`).
-3. Sube la carpeta `backend-php/api/` a `public_html/api/`.
-4. ¡Listo! La web y el formulario de contacto funcionarán automáticamente en tu dominio.
+He preparado un empaquetador automático que compila y reúne todo (Frontend + Backend PHP + .htaccess de seguridad) en un solo archivo:
+
+```bash
+npm run pack
+```
+
+Esto generará automáticamente:
+1. La carpeta lista para subir: [`dist_public_html/`](file:///c:/Users/hassa/Desktop/pagina_web/dist_public_html)
+2. El archivo ZIP para subir en 1 clic: [`dist_public_html.zip`](file:///c:/Users/hassa/Desktop/pagina_web/dist_public_html.zip) (ocupa solo ~545 KB)
+
+### Pasos para subirlo a tu Hosting (cPanel / Plesk / Hostinger / etc.):
+
+**Opción A — Subida rápida por cPanel / Administrador de archivos (Recomendada):**
+1. Entra al panel de tu hosting y abre el **Administrador de Archivos** (File Manager).
+2. Entra en la carpeta `public_html/` de tu dominio.
+3. Sube el archivo `dist_public_html.zip`.
+4. Haz clic derecho sobre el archivo subido y pulsa **Extraer (Extract)**.
+5. ¡Listo! Abre tu dominio en el navegador (ej. `https://tudominio.com`).
+
+**Opción B — Subida por FTP (FileZilla):**
+1. Conecta FileZilla a tu servidor.
+2. Abre la carpeta `public_html/` en el panel remoto.
+3. Arrastra y sube todos los archivos que hay dentro de la carpeta local `dist_public_html/`.
+4. ¡Listo! Todo quedará funcionando en producción con backend PHP y base de datos JSON local.
