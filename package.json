@@ -1,0 +1,10 @@
+{
+  "name": "pro-stasis-workspace",
+  "version": "1.0.0",
+  "description": "Pro-Stasis — Frontend en Angular (TypeScript) y Backend API en PHP",
+  "private": true,
+  "scripts": {
+    "start": "cd frontend && npm start",
+    "build": "cd frontend && npm run build"
+  }
+}

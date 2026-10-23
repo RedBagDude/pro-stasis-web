@@ -1,0 +1,12 @@
+# Reglas de enrutamiento para Apache / cPanel / Plesk
+<IfModule mod_rewrite.c>
+    RewriteEngine On
+    RewriteBase /api/
+
+    # Si el archivo o carpeta solicitado existe físicamente, servirlo directamente
+    RewriteCond %{REQUEST_FILENAME} !-f
+    RewriteCond %{REQUEST_FILENAME} !-d
+
+    # De lo contrario, pasar la petición a index.php
+    RewriteRule ^(.*)$ index.php [QSA,L]
+</IfModule>

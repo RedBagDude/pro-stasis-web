@@ -1,0 +1,62 @@
+[
+  {
+    "id": "precision",
+    "name": "Pinza de Precisión",
+    "icon": "crosshair",
+    "description": "Cierre simultáneo entre el pulgar e índice con detección de presión milimétrica. Diseñado para manipular objetos pequeños (llaves, bolígrafos, monedas) sin riesgo de aplastamiento.",
+    "force": "15 N",
+    "speed": "85 ms",
+    "recommendedUse": "Escritura, manejo de cubiertos finos, electrónica",
+    "fingersActive": ["Pulgar", "Índice"]
+  },
+  {
+    "id": "cylindrical",
+    "name": "Agarre Cilíndrico",
+    "icon": "cylinder",
+    "description": "Cierre envolvente de los cuatro dedos con oposición angular del pulgar. Aplica presión uniforme alrededor de objetos con curvatura como botellas, vasos o herramientas.",
+    "force": "55 N",
+    "speed": "120 ms",
+    "recommendedUse": "Sostener termos, botellas, pasamanos",
+    "fingersActive": ["Pulgar", "Índice", "Medio", "Anular", "Meñique"]
+  },
+  {
+    "id": "hook",
+    "name": "Gancho de Fuerza",
+    "icon": "anchor",
+    "description": "Flexión rígida en ángulo recto de los dedos medio, anular y meñique, manteniendo el pulgar libre. Maximiza la capacidad de carga vertical.",
+    "force": "65 N",
+    "speed": "140 ms",
+    "recommendedUse": "Transportar bolsas de compra, maletas o asas pesadas",
+    "fingersActive": ["Medio", "Anular", "Meñique"]
+  },
+  {
+    "id": "tripod",
+    "name": "Trípode Sensible",
+    "icon": "triangle",
+    "description": "Convergencia del pulgar contra el índice y dedo medio. Proporciona estabilidad tridimensional superior para objetos irregulares.",
+    "force": "28 N",
+    "speed": "95 ms",
+    "recommendedUse": "Manipular tazas, tarjetas bancarias, destornilladores",
+    "fingersActive": ["Pulgar", "Índice", "Medio"]
+  },
+  {
+    "id": "point",
+    "name": "Extensión Índice (Apuntado)",
+    "icon": "hand",
+    "description": "Aislamiento del dedo índice en extensión completa mientras los demás dedos se repliegan en posición de apoyo firme.",
+    "force": "10 N",
+    "speed": "70 ms",
+    "recommendedUse": "Pulsar pantallas táctiles, teclados, timbres o botones de ascensor",
+    "fingersActive": ["Índice"]
+  },
+  {
+    "id": "neutral",
+    "name": "Posición Neutral / Reposo",
+    "icon": "sparkles",
+    "description": "Apertura biomimética relajada a 25 grados. Minimiza el consumo de batería y la tensión articular en periodos de inactividad.",
+    "force": "0 N (Reposo)",
+    "speed": "100 ms",
+    "recommendedUse": "Caminar, descanso pasivo, ahorro de energía",
+    "fingersActive": ["Todos (relajados)"]
+  }
+]

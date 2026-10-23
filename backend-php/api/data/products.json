@@ -1,0 +1,60 @@
+[
+  {
+    "id": "apex-hand",
+    "name": "ÁPEX Hand V2",
+    "category": "Prótesis Mioeléctrica",
+    "tagline": "Precisión biónica adaptativa",
+    "description": "Prótesis de extremidad superior con 14 patrones de agarre motorizados, sensores táctiles hápticos y control mioeléctrico multicanal mediante electrodos superficiales EMG de alta resolución.",
+    "specs": {
+      "weight": "420g (ultraligera)",
+      "batteryLife": "18 horas de autonomía",
+      "material": "Titanio aeroespacial y fibra de carbono",
+      "dof": "6 grados de libertad independientes",
+      "gripForce": "Hasta 65 N de fuerza de prensión"
+    },
+    "features": [
+      "Reconocimiento biométrico de intención muscular en < 15ms",
+      "Retroalimentación háptica vibratoria en tiempo real",
+      "Conectividad Bluetooth LE para calibración desde app móvil",
+      "Resistencia al agua y polvo IP67"
+    ]
+  },
+  {
+    "id": "kronos-exo",
+    "name": "KRONOS Lower-Exo",
+    "category": "Exoesqueleto de Rehabilitación",
+    "tagline": "Reentrenamiento de la marcha inteligente",
+    "description": "Exoesqueleto modular de extremidades inferiores diseñado para rehabilitación motora y asistencia en bipedestación y marcha activa para pacientes con lesiones medulares o ACV.",
+    "specs": {
+      "weight": "14.2 kg (chasis modular)",
+      "batteryLife": "6 horas continuas de marcha activa",
+      "material": "Aleación de aluminio aeronáutico 7075 y polímeros reforzados",
+      "actuators": "4 servomotores Brushless de alto par",
+      "supportCapacity": "Hasta 100 kg de peso corporal"
+    },
+    "features": [
+      "Algoritmo predictivo de marcha con aprendizaje automático",
+      "Modos asistido, resistido y pasivo con transición fluida",
+      "Telemetría clínica remota para fisioterapeutas y neurólogos",
+      "Baterías intercambiables en caliente (Hot-swappable)"
+    ]
+  },
+  {
+    "id": "pro-stasis-link",
+    "name": "Pro-Stasis Neural Core",
+    "category": "Módulo de Control y Sensores",
+    "tagline": "Interfaz neuromusculoesquelética avanzada",
+    "description": "Unidad central de procesamiento de señales bioeléctricas y telemetría, integrable en cualquier dispositivo Pro-Stasis.",
+    "specs": {
+      "samplingRate": "2.5 kHz por canal EMG",
+      "channels": "8 canales EMG diferenciales + IMU 9-DOF",
+      "latency": "12 ms procesamiento extremo a extremo",
+      "encryption": "AES-256 en comunicaciones inalámbricas"
+    },
+    "features": [
+      "Filtrado activo de ruido e interferencias musculares cruzadas",
+      "Auto-calibración continua según fatiga muscular del usuario",
+      "API abierta para centros de investigación y universidades"
+    ]
+  }
+]
