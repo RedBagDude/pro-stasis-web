@@ -1,18 +1,18 @@
 # Backend API en PHP para Pro-Stasis
 
-Este backend está diseñado específicamente para alojarse en servidores web compartidos (cPanel, Plesk, Apache, Nginx, Hostinger, Siteground, IONOS, etc.) donde únicamente se admite **PHP** y no Node.js.
+Este backend está diseñado específicamente para alojarse en servidores web compartidos (cPanel, Plesk, Apache, Nginx, Hostinger, SiteGround, IONOS, etc.), donde solo se admite **PHP** y no Node.js.
 
 ## Características
 
 - **Sin base de datos externa:** Guarda todos los mensajes de contacto en `api/data/messages.json`.
-- **Seguro:** La carpeta `data/` cuenta con un `.htaccess` que impide que nadie pueda descargar los mensajes desde un navegador.
+- **Seguro:** La carpeta `data/` incluye un archivo `.htaccess` que impide descargar los mensajes desde un navegador.
 - **Doble compatibilidad de URLs:**
   - Si el servidor tiene `mod_rewrite` activo: `POST /api/contact`, `GET /api/health`, etc.
-  - Si no tiene reescritura: `POST /api/contact.php`, `GET /api/health.php`, etc.
+  - Si no tiene reescritura de URLs: `POST /api/contact.php`, `GET /api/health.php`, etc.
 
-## Estructura para subir al Hosting
+## Estructura para subir al hosting
 
-En tu hosting (normalmente dentro de la carpeta `public_html/`), la estructura debe quedar así:
+En tu hosting (normalmente dentro de la carpeta `public_html/`), la estructura debe quedar de la siguiente manera:
 
 ```
 public_html/
@@ -36,6 +36,7 @@ public_html/
 
 ## Permisos requeridos en el servidor
 
-En el Administrador de Archivos de tu cPanel o por FTP:
+Desde el Administrador de archivos de cPanel o por FTP:
+
 - La carpeta `api/data/` debe tener permisos de escritura (`755` o `775`).
 - El archivo `api/data/messages.json` debe tener permisos de escritura (`644` o `664`).
