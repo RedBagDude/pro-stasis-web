@@ -22,13 +22,14 @@ import { refreshIcons } from '../../icons';
         </a>
 
         <!-- Desktop Nav Links -->
-        <nav class="hidden md:flex items-center gap-8 text-xs font-tech tracking-wider uppercase text-neutral-400">
+        <nav class="hidden md:flex items-center gap-6 text-xs font-tech tracking-wider uppercase text-neutral-400">
           <a class="hover:text-white transition-colors duration-200" href="#inicio">{{ t().navbar.home }}</a>
+          <a class="hover:text-white transition-colors duration-200" href="#prototipo">{{ t().navbar.prototype }}</a>
           <a class="hover:text-white transition-colors duration-200" href="#tecnologia">{{ t().navbar.technology }}</a>
-          <a class="hover:text-white transition-colors duration-200" href="#productos">{{ t().navbar.products }}</a>
-          <a class="hover:text-white transition-colors duration-200" href="#empresa">{{ t().navbar.about }}</a>
-          <a class="hover:text-white transition-colors duration-200" href="#impacto">{{ t().navbar.impact }}</a>
+          <a class="hover:text-white transition-colors duration-200" href="#equipo">{{ t().navbar.team }}</a>
           <a class="hover:text-white transition-colors duration-200" href="#roadmap">{{ t().navbar.roadmap }}</a>
+          <a class="hover:text-white transition-colors duration-200" href="#eye">{{ t().navbar.eye }}</a>
+          <a class="hover:text-white transition-colors duration-200" href="#colabora">{{ t().navbar.collab }}</a>
           <a class="hover:text-white transition-colors duration-200" href="#contacto">{{ t().navbar.contact }}</a>
         </nav>
 

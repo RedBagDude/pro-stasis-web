@@ -25,7 +25,7 @@ import { refreshIcons } from '../../icons';
           </p>
         </div>
 
-        <!-- Feature Matrix & Biomechanical Diagram -->
+        <!-- Feature Matrix & Architecture Diagram -->
         <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
           <!-- Left Features List -->
           <div class="lg:col-span-6 space-y-4">
@@ -33,7 +33,7 @@ import { refreshIcons } from '../../icons';
             <div class="p-5 rounded-lg bg-brand-card/50 border border-brand-border hover:border-brand-red/40 transition-colors group">
               <div class="flex items-start gap-4">
                 <div class="p-2.5 rounded bg-brand-red/10 border border-brand-red/30 text-brand-red group-hover:bg-brand-red group-hover:text-white transition-colors">
-                  <i class="w-5 h-5" data-lucide="activity"></i>
+                  <i class="w-5 h-5" data-lucide="printer"></i>
                 </div>
                 <div>
                   <h4 class="text-sm font-tech font-bold uppercase text-white tracking-wide">{{ t().technology.f1Title }}</h4>
@@ -45,7 +45,7 @@ import { refreshIcons } from '../../icons';
             <div class="p-5 rounded-lg bg-brand-card/50 border border-brand-border hover:border-brand-red/40 transition-colors group">
               <div class="flex items-start gap-4">
                 <div class="p-2.5 rounded bg-brand-red/10 border border-brand-red/30 text-brand-red group-hover:bg-brand-red group-hover:text-white transition-colors">
-                  <i class="w-5 h-5" data-lucide="cpu"></i>
+                  <i class="w-5 h-5" data-lucide="settings"></i>
                 </div>
                 <div>
                   <h4 class="text-sm font-tech font-bold uppercase text-white tracking-wide">{{ t().technology.f2Title }}</h4>
@@ -57,7 +57,7 @@ import { refreshIcons } from '../../icons';
             <div class="p-5 rounded-lg bg-brand-card/50 border border-brand-border hover:border-brand-red/40 transition-colors group">
               <div class="flex items-start gap-4">
                 <div class="p-2.5 rounded bg-brand-red/10 border border-brand-red/30 text-brand-red group-hover:bg-brand-red group-hover:text-white transition-colors">
-                  <i class="w-5 h-5" data-lucide="layers"></i>
+                  <i class="w-5 h-5" data-lucide="cpu"></i>
                 </div>
                 <div>
                   <h4 class="text-sm font-tech font-bold uppercase text-white tracking-wide">{{ t().technology.f3Title }}</h4>
@@ -69,7 +69,7 @@ import { refreshIcons } from '../../icons';
             <div class="p-5 rounded-lg bg-brand-card/50 border border-brand-border hover:border-brand-red/40 transition-colors group">
               <div class="flex items-start gap-4">
                 <div class="p-2.5 rounded bg-brand-red/10 border border-brand-red/30 text-brand-red group-hover:bg-brand-red group-hover:text-white transition-colors">
-                  <i class="w-5 h-5" data-lucide="wrench"></i>
+                  <i class="w-5 h-5" data-lucide="compass"></i>
                 </div>
                 <div>
                   <h4 class="text-sm font-tech font-bold uppercase text-white tracking-wide">{{ t().technology.f4Title }}</h4>
@@ -81,7 +81,7 @@ import { refreshIcons } from '../../icons';
             <div class="p-5 rounded-lg bg-brand-card/50 border border-brand-border hover:border-brand-red/40 transition-colors group">
               <div class="flex items-start gap-4">
                 <div class="p-2.5 rounded bg-brand-red/10 border border-brand-red/30 text-brand-red group-hover:bg-brand-red group-hover:text-white transition-colors">
-                  <i class="w-5 h-5" data-lucide="printer"></i>
+                  <i class="w-5 h-5" data-lucide="layers"></i>
                 </div>
                 <div>
                   <h4 class="text-sm font-tech font-bold uppercase text-white tracking-wide">{{ t().technology.f5Title }}</h4>
@@ -92,9 +92,9 @@ import { refreshIcons } from '../../icons';
 
           </div>
 
-          <!-- Right Visual: Neural Arm Schematic Render -->
-          <div class="lg:col-span-6 flex justify-center">
-            <div class="relative w-full max-lg bg-[#0a0b10] border border-brand-border rounded-2xl overflow-hidden shadow-2xl p-2 group">
+          <!-- Right Visual: Render + Architecture Diagram (Page 6) -->
+          <div class="lg:col-span-6 space-y-6">
+            <div class="relative w-full bg-[#0a0b10] border border-brand-border rounded-2xl overflow-hidden shadow-2xl p-2 group">
               <div class="relative aspect-[3/4] w-full rounded-xl overflow-hidden flex items-center justify-center bg-black">
                 <img 
                   src="assets/images/tech_arm.webp" loading="lazy" decoding="async"
@@ -113,6 +113,30 @@ import { refreshIcons } from '../../icons';
                 </div>
               </div>
             </div>
+
+            <!-- Diagrama fiel al sistema real (PDF Página 6) -->
+            <div class="p-5 rounded-xl bg-brand-card/60 border border-brand-border">
+              <div class="text-[10px] font-mono tracking-widest text-brand-red uppercase mb-3 text-center font-semibold">ARQUITECTURA DEL SISTEMA REAL</div>
+              <div class="grid grid-cols-3 gap-2 text-center items-center">
+                <div class="p-3 bg-black/60 rounded border border-brand-border/80">
+                  <div class="text-[9px] font-mono text-neutral-400 uppercase">Controlador</div>
+                  <div class="text-xs font-tech font-bold text-white mt-0.5">XIAO ESP32-C6</div>
+                </div>
+                <div class="p-3 bg-black/60 rounded border border-brand-border/80">
+                  <div class="text-[9px] font-mono text-neutral-400 uppercase">Actuadores</div>
+                  <div class="text-xs font-tech font-bold text-white mt-0.5">Servomotores</div>
+                </div>
+                <div class="p-3 bg-black/60 rounded border border-brand-border/80">
+                  <div class="text-[9px] font-mono text-neutral-400 uppercase">Respuesta</div>
+                  <div class="text-xs font-tech font-bold text-white mt-0.5">Movimiento Mano</div>
+                </div>
+              </div>
+              <div class="mt-3 pt-3 border-t border-brand-border/50 flex items-center justify-center gap-2 text-[11px] font-mono text-neutral-300">
+                <i class="w-4 h-4 text-brand-red shrink-0" data-lucide="compass"></i>
+                <span>Fuente de datos inerciales: Sensor MPU6050 (Acelerómetro + Giroscopio)</span>
+              </div>
+            </div>
+
           </div>
         </div>
 

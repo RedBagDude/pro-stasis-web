@@ -34,13 +34,13 @@ import { refreshIcons } from '../../icons';
             
             <!-- Buttons -->
             <div class="flex flex-wrap items-center gap-4 pt-2">
-              <a class="inline-flex items-center gap-2 px-7 py-3.5 bg-brand-red hover:bg-brand-redHover text-white font-tech font-semibold text-xs tracking-wider uppercase rounded transition-all duration-200 glow-red shadow-lg" href="#tecnologia">
-                <span>{{ t().hero.btnTech }}</span>
+              <a class="inline-flex items-center gap-2 px-7 py-3.5 bg-brand-red hover:bg-brand-redHover text-white font-tech font-semibold text-xs tracking-wider uppercase rounded transition-all duration-200 glow-red shadow-lg" href="#prototipo">
+                <span>{{ t().hero.btnPrototype }}</span>
                 <i class="w-4 h-4" data-lucide="arrow-right"></i>
               </a>
-              <a href="#contacto" class="inline-flex items-center gap-2 px-6 py-3.5 bg-brand-card hover:bg-neutral-800 text-neutral-200 border border-brand-border rounded font-tech text-xs tracking-wider uppercase transition-colors">
-                <i class="w-4 h-4 text-brand-red" data-lucide="play-circle"></i>
-                <span>{{ t().hero.btnVideo }}</span>
+              <a href="#colabora" class="inline-flex items-center gap-2 px-6 py-3.5 bg-brand-card hover:bg-neutral-800 text-neutral-200 border border-brand-border rounded font-tech text-xs tracking-wider uppercase transition-colors">
+                <i class="w-4 h-4 text-brand-red" data-lucide="network"></i>
+                <span>{{ t().hero.btnCollab }}</span>
               </a>
             </div>
           </div>
@@ -62,7 +62,7 @@ import { refreshIcons } from '../../icons';
               <div class="w-full h-full rounded-xl overflow-hidden relative flex items-center justify-center">
                 <img 
                   src="assets/images/hero_hand.webp" fetchpriority="high" decoding="async"
-                  alt="Mano Robótica Biónica Pro-Stasis" 
+                  alt="Prototipo de Mano Robótica Articulada Pro-Stasis" 
                   class="w-full h-full object-cover object-center scale-105 group-hover:scale-110 transition-transform duration-700 ease-out"
                 />
                 <div class="absolute inset-0 bg-gradient-to-t from-[#07080c] via-transparent to-transparent opacity-80"></div>
@@ -73,9 +73,9 @@ import { refreshIcons } from '../../icons';
               <div class="absolute bottom-4 left-6 right-6 z-20 border-t border-white/10 pt-2 flex items-center justify-between text-[11px] font-mono text-neutral-300">
                 <span class="flex items-center gap-1.5">
                   <span class="w-1.5 h-1.5 rounded-full bg-emerald-400"></span>
-                  {{ t().hero.hudEmg }}
+                  {{ t().hero.hudController }}
                 </span>
-                <span class="text-brand-red font-semibold">{{ t().hero.hudGrips }}</span>
+                <span class="text-brand-red font-semibold">{{ t().hero.hudHardware }}</span>
               </div>
 
             </div>

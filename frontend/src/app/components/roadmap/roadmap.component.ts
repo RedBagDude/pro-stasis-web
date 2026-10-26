@@ -22,79 +22,105 @@ import { refreshIcons } from '../../icons';
           </p>
         </div>
 
-        <!-- Roadmap Timeline Grid -->
-        <div class="grid grid-cols-1 md:grid-cols-4 gap-6 relative">
+        <!-- Roadmap Timeline Grid: 5 Etapas del PDF -->
+        <div class="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-5 gap-4 relative mb-12">
+          
           <!-- Phase 1 -->
-          <div class="p-6 bg-brand-card border border-brand-red/60 rounded-xl relative flex flex-col justify-between">
+          <div class="p-5 bg-brand-card border border-brand-red/60 rounded-xl relative flex flex-col justify-between shadow-lg">
             <div>
-              <div class="flex items-center justify-between mb-4">
+              <div class="flex items-center justify-between mb-3">
                 <span class="text-[10px] font-mono tracking-widest text-brand-red uppercase font-bold">{{ t().roadmap.p1Badge }}</span>
-                <span class="text-[10px] font-mono px-2 py-0.5 rounded bg-brand-red/20 text-brand-red">{{ t().roadmap.p1Date }}</span>
+                <span class="text-[9px] font-mono px-2 py-0.5 rounded bg-brand-red/20 text-brand-red font-semibold">{{ t().roadmap.p1Date }}</span>
               </div>
-              <h4 class="text-lg font-tech font-bold text-white uppercase">{{ t().roadmap.p1Title }}</h4>
+              <h4 class="text-base font-tech font-bold text-white uppercase">{{ t().roadmap.p1Title }}</h4>
               <p class="text-xs text-neutral-400 mt-2 leading-relaxed">
                 {{ t().roadmap.p1Desc }}
               </p>
             </div>
-            <div class="mt-6 pt-4 border-t border-brand-border text-xs font-mono text-brand-red flex items-center gap-1.5">
-              <i class="w-4 h-4" data-lucide="check-circle"></i>
+            <div class="mt-6 pt-4 border-t border-brand-border text-[11px] font-mono text-brand-red flex items-center gap-1.5">
+              <i class="w-3.5 h-3.5" data-lucide="check-circle"></i>
               <span>{{ t().roadmap.p1Status }}</span>
             </div>
           </div>
 
           <!-- Phase 2 -->
-          <div class="p-6 bg-brand-card border border-brand-border hover:border-brand-red/50 rounded-xl relative flex flex-col justify-between">
+          <div class="p-5 bg-brand-card border border-brand-border hover:border-brand-red/50 rounded-xl relative flex flex-col justify-between shadow-lg">
             <div>
-              <div class="flex items-center justify-between mb-4">
-                <span class="text-[10px] font-mono tracking-widest text-neutral-400 uppercase font-bold">{{ t().roadmap.p2Badge }}</span>
-                <span class="text-[10px] font-mono px-2 py-0.5 rounded bg-neutral-800 text-neutral-300">{{ t().roadmap.p2Date }}</span>
+              <div class="flex items-center justify-between mb-3">
+                <span class="text-[10px] font-mono tracking-widest text-neutral-300 uppercase font-bold">{{ t().roadmap.p2Badge }}</span>
+                <span class="text-[9px] font-mono px-2 py-0.5 rounded bg-brand-red/10 border border-brand-red/30 text-brand-red font-semibold">{{ t().roadmap.p2Date }}</span>
               </div>
-              <h4 class="text-lg font-tech font-bold text-white uppercase">{{ t().roadmap.p2Title }}</h4>
+              <h4 class="text-base font-tech font-bold text-white uppercase">{{ t().roadmap.p2Title }}</h4>
               <p class="text-xs text-neutral-400 mt-2 leading-relaxed">
                 {{ t().roadmap.p2Desc }}
               </p>
             </div>
-            <div class="mt-6 pt-4 border-t border-brand-border text-xs font-mono text-neutral-400 flex items-center gap-1.5">
+            <div class="mt-6 pt-4 border-t border-brand-border text-[11px] font-mono text-amber-300 flex items-center gap-1.5">
               <span class="w-2 h-2 rounded-full bg-amber-400 animate-pulse"></span>
               <span>{{ t().roadmap.p2Status }}</span>
             </div>
           </div>
 
           <!-- Phase 3 -->
-          <div class="p-6 bg-brand-card border border-brand-border hover:border-brand-red/50 rounded-xl relative flex flex-col justify-between">
+          <div class="p-5 bg-brand-card border border-brand-border hover:border-brand-red/50 rounded-xl relative flex flex-col justify-between shadow-lg">
             <div>
-              <div class="flex items-center justify-between mb-4">
+              <div class="flex items-center justify-between mb-3">
                 <span class="text-[10px] font-mono tracking-widest text-neutral-400 uppercase font-bold">{{ t().roadmap.p3Badge }}</span>
-                <span class="text-[10px] font-mono px-2 py-0.5 rounded bg-neutral-800 text-neutral-300">{{ t().roadmap.p3Date }}</span>
+                <span class="text-[9px] font-mono px-2 py-0.5 rounded bg-neutral-800 text-neutral-300">{{ t().roadmap.p3Date }}</span>
               </div>
-              <h4 class="text-lg font-tech font-bold text-white uppercase">{{ t().roadmap.p3Title }}</h4>
+              <h4 class="text-base font-tech font-bold text-white uppercase">{{ t().roadmap.p3Title }}</h4>
               <p class="text-xs text-neutral-400 mt-2 leading-relaxed">
                 {{ t().roadmap.p3Desc }}
               </p>
             </div>
-            <div class="mt-6 pt-4 border-t border-brand-border text-xs font-mono text-neutral-500 flex items-center gap-1.5">
-              <i class="w-4 h-4" data-lucide="clock"></i>
+            <div class="mt-6 pt-4 border-t border-brand-border text-[11px] font-mono text-neutral-400 flex items-center gap-1.5">
+              <i class="w-3.5 h-3.5" data-lucide="clock"></i>
               <span>{{ t().roadmap.p3Status }}</span>
             </div>
           </div>
 
           <!-- Phase 4 -->
-          <div class="p-6 bg-brand-card border border-brand-border hover:border-brand-red/50 rounded-xl relative flex flex-col justify-between">
+          <div class="p-5 bg-brand-card border border-brand-border hover:border-brand-red/50 rounded-xl relative flex flex-col justify-between shadow-lg">
             <div>
-              <div class="flex items-center justify-between mb-4">
+              <div class="flex items-center justify-between mb-3">
                 <span class="text-[10px] font-mono tracking-widest text-neutral-400 uppercase font-bold">{{ t().roadmap.p4Badge }}</span>
-                <span class="text-[10px] font-mono px-2 py-0.5 rounded bg-neutral-800 text-neutral-300">{{ t().roadmap.p4Date }}</span>
+                <span class="text-[9px] font-mono px-2 py-0.5 rounded bg-neutral-800 text-neutral-300">{{ t().roadmap.p4Date }}</span>
               </div>
-              <h4 class="text-lg font-tech font-bold text-white uppercase">{{ t().roadmap.p4Title }}</h4>
+              <h4 class="text-base font-tech font-bold text-white uppercase">{{ t().roadmap.p4Title }}</h4>
               <p class="text-xs text-neutral-400 mt-2 leading-relaxed">
                 {{ t().roadmap.p4Desc }}
               </p>
             </div>
-            <div class="mt-6 pt-4 border-t border-brand-border text-xs font-mono text-neutral-500 flex items-center gap-1.5">
-              <i class="w-4 h-4" data-lucide="target"></i>
+            <div class="mt-6 pt-4 border-t border-brand-border text-[11px] font-mono text-neutral-400 flex items-center gap-1.5">
+              <i class="w-3.5 h-3.5" data-lucide="globe"></i>
               <span>{{ t().roadmap.p4Status }}</span>
             </div>
           </div>
+
+          <!-- Phase 5 -->
+          <div class="p-5 bg-brand-card border border-brand-border hover:border-brand-red/50 rounded-xl relative flex flex-col justify-between shadow-lg">
+            <div>
+              <div class="flex items-center justify-between mb-3">
+                <span class="text-[10px] font-mono tracking-widest text-neutral-400 uppercase font-bold">{{ t().roadmap.p5Badge }}</span>
+                <span class="text-[9px] font-mono px-2 py-0.5 rounded bg-neutral-800 text-neutral-300">{{ t().roadmap.p5Date }}</span>
+              </div>
+              <h4 class="text-base font-tech font-bold text-white uppercase">{{ t().roadmap.p5Title }}</h4>
+              <p class="text-xs text-neutral-400 mt-2 leading-relaxed">
+                {{ t().roadmap.p5Desc }}
+              </p>
+            </div>
+            <div class="mt-6 pt-4 border-t border-brand-border text-[11px] font-mono text-neutral-500 flex items-center gap-1.5">
+              <i class="w-3.5 h-3.5" data-lucide="sparkles"></i>
+              <span>{{ t().roadmap.p5Status }}</span>
+            </div>
+          </div>
+
+        </div>
+
+        <!-- Criterio de rigor técnico (PDF Página 8) -->
+        <div class="p-4 rounded-xl bg-black/40 border border-brand-border/60 flex items-center gap-3 text-xs font-mono text-neutral-400">
+          <i class="w-4 h-4 text-brand-red shrink-0" data-lucide="info"></i>
+          <span>Compromiso de rigor: No se publican métricas de fuerza, autonomía ni ciclos de vida sin protocolo de caracterización y mediciones repetibles documentadas.</span>
         </div>
       </div>
     </section>

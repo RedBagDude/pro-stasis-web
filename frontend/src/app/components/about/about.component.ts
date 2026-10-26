@@ -7,7 +7,8 @@ import { refreshIcons } from '../../icons';
   standalone: true,
   imports: [],
   template: `
-    <section class="py-24 border-t border-brand-border bg-[#08090d]" data-purpose="about-section" id="empresa">
+    <section class="py-24 border-t border-brand-border bg-[#08090d] relative" data-purpose="about-section" id="equipo">
+      <span id="empresa" class="sr-only"></span>
       <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         
         <!-- Section Tag -->

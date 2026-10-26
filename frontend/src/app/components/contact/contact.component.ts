@@ -112,16 +112,30 @@ import { refreshIcons } from '../../icons';
                 </div>
               </div>
 
-              <div>
-                <label class="block text-xs font-mono uppercase text-neutral-300 mb-1.5" for="email">{{ t().contact.labelEmail }}</label>
-                <input 
-                  [(ngModel)]="formData.email" 
-                  name="email" 
-                  required 
-                  class="w-full bg-[#090a10]/90 border border-brand-border rounded-lg px-4 py-3 text-xs font-mono text-white placeholder-neutral-600 focus:outline-none focus:border-brand-red transition-colors" 
-                  id="email" 
-                  [placeholder]="t().contact.placeholderEmail" 
-                  type="email"/>
+              <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                <div>
+                  <label class="block text-xs font-mono uppercase text-neutral-300 mb-1.5" for="email">{{ t().contact.labelEmail }}</label>
+                  <input 
+                    [(ngModel)]="formData.email" 
+                    name="email" 
+                    required 
+                    class="w-full bg-[#090a10]/90 border border-brand-border rounded-lg px-4 py-3 text-xs font-mono text-white placeholder-neutral-600 focus:outline-none focus:border-brand-red transition-colors" 
+                    id="email" 
+                    [placeholder]="t().contact.placeholderEmail" 
+                    type="email"/>
+                </div>
+                <div>
+                  <label class="block text-xs font-mono uppercase text-neutral-300 mb-1.5" for="motivo">{{ t().contact.labelReason }}</label>
+                  <select 
+                    [(ngModel)]="formData.reason" 
+                    name="reason" 
+                    class="w-full bg-[#090a10]/90 border border-brand-border rounded-lg px-4 py-3 text-xs font-mono text-white placeholder-neutral-600 focus:outline-none focus:border-brand-red transition-colors cursor-pointer" 
+                    id="motivo">
+                    <option value="colaboracion">{{ t().contact.optCollab }}</option>
+                    <option value="prototipo">{{ t().contact.optPrototype }}</option>
+                    <option value="general">{{ t().contact.optGeneral }}</option>
+                  </select>
+                </div>
               </div>
 
               <div>
@@ -174,6 +188,15 @@ import { refreshIcons } from '../../icons';
           </div>
 
         </div>
+
+        <!-- Nota regulatoria y legal (PDF Página 11) -->
+        <div class="mt-16 p-5 bg-black/60 border border-brand-border/60 rounded-xl text-xs font-mono text-neutral-400 flex items-start gap-3">
+          <i class="w-4 h-4 text-brand-red shrink-0 mt-0.5" data-lucide="info"></i>
+          <div>
+            <span class="text-neutral-200 font-semibold uppercase block mb-1">Aviso Regulatorio y Transparencia Técnica:</span>
+            <span>{{ t().contact.regulatoryNote }}</span>
+          </div>
+        </div>
       </div>
     </section>
   `
@@ -189,6 +212,7 @@ export class ContactComponent implements AfterViewInit {
     email: '',
     phone: '',
     role: '',
+    reason: 'colaboracion',
     message: ''
   };
 
@@ -221,6 +245,7 @@ export class ContactComponent implements AfterViewInit {
           email: '',
           phone: '',
           role: '',
+          reason: 'colaboracion',
           message: ''
         };
         refreshIcons();

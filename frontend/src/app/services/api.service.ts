@@ -42,6 +42,7 @@ export interface ContactPayload {
   email: string;
   phone?: string;
   role?: string;
+  reason?: string;
   message: string;
 }
 
