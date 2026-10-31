@@ -39,3 +39,15 @@ public_html/
 En el Administrador de Archivos de tu cPanel o por FTP:
 - La carpeta `api/data/` debe tener permisos de escritura (`755` o `775`).
 - El archivo `api/data/messages.json` debe tener permisos de escritura (`644` o `664`).
+
+## Notas de mantenimiento y recomendaciones de uso
+
+Cada vez que se regenere la web Angular conviene volver a copiar los archivos compilados a la raíz del hosting (index.html, estilos, javascript y assets) sin mover la carpeta api de su ubicación, ya que el enrutador y los endpoints dependen de esa estructura para responder.
+
+Los mensajes de contacto se acumulan en messages.json, por lo que es recomendable revisarlos y vaciarlos periódicamente; ese archivo debe permanecer siempre dentro de data/ para que el .htaccess siga impidiendo su descarga desde el navegador.
+
+Si la API deja de responder después de una subida o migración, revisa primero los permisos de escritura de la carpeta data y del archivo de mensajes, porque sin ellos el backend no puede guardar los envíos del formulario.
+
+La doble compatibilidad de rutas permite usar la API tanto en servidores con reescritura activa como en los que no la tienen; en este segundo caso basta con apuntar a los endpoints directos terminados en .php, que ofrecen las mismas respuestas.
+
+Al trasladar el proyecto a otro hosting, sube juntos el enrutador principal, los endpoints directos y los archivos de datos, y verifica luego que el formulario de contacto y el resto de rutas respondan correctamente.
