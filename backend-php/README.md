@@ -51,3 +51,13 @@ Si la API deja de responder después de una subida o migración, revisa primero 
 La doble compatibilidad de rutas permite usar la API tanto en servidores con reescritura activa como en los que no la tienen; en este segundo caso basta con apuntar a los endpoints directos terminados en .php, que ofrecen las mismas respuestas.
 
 Al trasladar el proyecto a otro hosting, sube juntos el enrutador principal, los endpoints directos y los archivos de datos, y verifica luego que el formulario de contacto y el resto de rutas respondan correctamente.
+
+## Preguntas frecuentes sobre el funcionamiento del backend
+
+Los mensajes de contacto se almacenan en el archivo de datos dentro de la carpeta protegida, sin depender de una base de datos externa. Es recomendable revisarlos y vaciarlos periódicamente, manteniendo siempre ese archivo dentro de su carpeta para que la protección del servidor siga impidiendo su descarga desde el navegador.
+
+Al regenerar la web Angular se pueden volver a copiar los archivos compilados a la raíz del hosting, pero la carpeta de la API debe conservar su ubicación para que el enrutador y los endpoints continúen respondiendo.
+
+La API admite dos formas de acceso según el servidor: con reescritura activa se usan las rutas limpias y, si no la tiene, se apunta a los endpoints directos terminados en .php, que ofrecen las mismas respuestas.
+
+Si el formulario deja de guardar envíos tras una subida o migración, conviene revisar primero los permisos de escritura de la carpeta de datos y del archivo de mensajes. Al cambiar de hosting, sube juntos el enrutador principal, los endpoints directos y los archivos de datos, y verifica después que el formulario y el resto de rutas respondan correctamente.
