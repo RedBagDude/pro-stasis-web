@@ -71,3 +71,13 @@ Esto generará automáticamente:
 2. Abre la carpeta `public_html/` en el panel remoto.
 3. Arrastra y sube todos los archivos que hay dentro de la carpeta local `dist_public_html/`.
 4. ¡Listo! Todo quedará funcionando en producción con backend PHP y base de datos JSON local.
+
+## Edición de textos, imágenes y mensajes del formulario
+Los textos visibles se concentran en content_es.json y content_en.json, por lo que cualquier cambio editorial debe aplicarse en ambos archivos para conservar la experiencia bilingüe.
+Las fichas de prótesis y los modos de agarre se mantienen en products.json y grips.json; conviene revisar que su estructura siga siendo coherente con lo que muestran las secciones correspondientes del frontend.
+Las imágenes y fotografías deben colocarse dentro de frontend/public/assets/images, que es la ubicación prevista para todos los recursos visuales de la web.
+Los mensajes enviados desde el formulario se guardan en messages.json, sin depender de una base de datos externa; por ello, ese archivo forma parte del funcionamiento cotidiano del backend PHP.
+Al actualizar contenido, es recomendable comprobar que los textos nuevos mantengan el mismo tono y nivel de detalle en español e inglés, y que no se introduzcan referencias a datos que no existan en los archivos JSON.
+Para producción, el paquete generado ya incluye Frontend, Backend PHP y las reglas de seguridad del hosting, de modo que las ediciones deben realizarse sobre el proyecto y no directamente sobre una copia publicada.
+Si se modifican textos, fichas o imágenes, conviene revisar después la carpeta resultante del empaquetado para confirmar que los cambios están presentes antes de subirla.
+La revisión final debe centrarse en la coherencia entre contenido, imágenes y datos técnicos mostrados al usuario, ya que el proyecto no usa una base de datos externa que centralice esas validaciones.
