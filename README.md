@@ -81,3 +81,14 @@ Al actualizar contenido, es recomendable comprobar que los textos nuevos manteng
 Para producción, el paquete generado ya incluye Frontend, Backend PHP y las reglas de seguridad del hosting, de modo que las ediciones deben realizarse sobre el proyecto y no directamente sobre una copia publicada.
 Si se modifican textos, fichas o imágenes, conviene revisar después la carpeta resultante del empaquetado para confirmar que los cambios están presentes antes de subirla.
 La revisión final debe centrarse en la coherencia entre contenido, imágenes y datos técnicos mostrados al usuario, ya que el proyecto no usa una base de datos externa que centralice esas validaciones.
+
+## Recomendaciones para validar la coherencia del contenido antes de publicar
+
+Antes de empaquetar una nueva versión, conviene revisar que los textos visibles mantengan correspondencia entre content_es.json y content_en.json, ya que la experiencia bilingüe depende de ambos archivos.
+Las fichas de prótesis y los modos de agarre deben seguir siendo coherentes con products.json y grips.json, de modo que la información técnica mostrada en el frontend no contradiga esos datos.
+Las imágenes y fotografías deben permanecer en frontend/public/assets/images, la ubicación prevista para todos los recursos visuales, y comprobarse junto con los textos que acompañan a cada sección.
+El formulario se apoya en messages.json y no en una base de datos externa, por lo que ese archivo debe considerarse parte del funcionamiento cotidiano del backend PHP.
+Al introducir cambios editoriales, es recomendable conservar el mismo tono y nivel de detalle en español e inglés, sin añadir referencias a datos que no existan en los archivos JSON.
+Las ediciones deben realizarse sobre el proyecto y no directamente sobre una copia ya publicada, porque el paquete de producción se genera a partir del contenido empaquetado.
+Después de generar la carpeta resultante, merece la pena revisar que los cambios en textos, fichas e imágenes estén presentes antes de subirla al hosting.
+La revisión final debe centrarse en la coherencia entre contenido, imágenes y datos técnicos mostrados al usuario, dado que el proyecto no utiliza una base de datos externa que centralice esas validaciones.
