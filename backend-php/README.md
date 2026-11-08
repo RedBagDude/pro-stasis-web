@@ -61,3 +61,15 @@ Al regenerar la web Angular se pueden volver a copiar los archivos compilados a 
 La API admite dos formas de acceso según el servidor: con reescritura activa se usan las rutas limpias y, si no la tiene, se apunta a los endpoints directos terminados en .php, que ofrecen las mismas respuestas.
 
 Si el formulario deja de guardar envíos tras una subida o migración, conviene revisar primero los permisos de escritura de la carpeta de datos y del archivo de mensajes. Al cambiar de hosting, sube juntos el enrutador principal, los endpoints directos y los archivos de datos, y verifica después que el formulario y el resto de rutas respondan correctamente.
+
+## Comprobaciones antes de publicar el backend
+
+Antes de dar por cerrada una publicación, conviene confirmar que la carpeta de la API conserva su ubicación dentro del hosting y que no se ha movido junto con los archivos compilados de la web Angular, ya que el enrutador y los endpoints dependen de esa estructura.
+
+Verifica que el enrutador principal, los endpoints directos y los archivos de datos se hayan subido juntos; si falta alguno, las rutas limpias o los accesos terminados en .php dejarán de ofrecer las mismas respuestas.
+
+Revisa los permisos de escritura de la carpeta de datos y del archivo de mensajes, porque son la causa más habitual de que el formulario de contacto deje de guardar envíos tras una subida o una migración.
+
+Comprueba que el archivo de protección de la carpeta de datos siga presente, ya que es el que impide que los mensajes almacenados se descarguen desde un navegador.
+
+Por último, prueba el formulario de contacto y el resto de rutas por la vía reescrita y, si el servidor no la admite, por los endpoints directos, y aprovecha para revisar el contenido acumulado de mensajes y vaciarlo si procede.
