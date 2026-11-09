@@ -66,3 +66,12 @@ Use the scaffolding support provided by Angular CLI when adding new components o
 Build output is placed in the dist directory, and the production build is optimized by default; avoid assuming a different output location unless the project configuration is changed.  
 Unit tests run through Vitest, while end-to-end testing has no default framework, so any e2e setup must be chosen and documented separately.  
 When updating this file, keep the distinctions between development, build, unit testing, and end-to-end testing intact so new contributors can follow the same workflow.
+
+## Guidance for New Contributors
+
+Treat this document as the starting point for local development and verification rather than a replacement for the Angular CLI help output.  
+Use the development server for iterative work, since it reloads automatically when source files change and is expected on the documented local port.  
+Add components or other schematics through the CLI’s scaffolding support, and check its help output before introducing custom steps.  
+After building, expect artifacts in the dist directory and assume the production build is optimized unless the project configuration is intentionally changed.  
+Run unit tests with the configured Vitest runner, and treat end-to-end testing as a separate choice because no default framework is included.  
+When updating this document, keep the distinctions between development, building, unit testing, and end-to-end testing clear so contributors can follow a consistent workflow.
