@@ -73,3 +73,10 @@ Revisa los permisos de escritura de la carpeta de datos y del archivo de mensaje
 Comprueba que el archivo de protección de la carpeta de datos siga presente, ya que es el que impide que los mensajes almacenados se descarguen desde un navegador.
 
 Por último, prueba el formulario de contacto y el resto de rutas por la vía reescrita y, si el servidor no la admite, por los endpoints directos, y aprovecha para revisar el contenido acumulado de mensajes y vaciarlo si procede.
+
+## Aclaraciones sobre las dos formas de acceso a la API
+La API puede responder por rutas limpias cuando el servidor tiene la reescritura activa y por endpoints directos terminados en .php cuando esa reescritura no está disponible.
+En ambos casos las respuestas son equivalentes, por lo que la elección depende de la configuración del hosting y no de una funcionalidad distinta.
+Si tras una migración unas rutas funcionan y otras no, conviene comprobar que el enrutador principal y los endpoints directos se subieron juntos.
+También es útil recordar que la carpeta de la API debe conservar su ubicación respecto a la web compilada para que esas rutas sigan resolviendo.
+Esta aclaración no cambia el almacenamiento de mensajes ni la protección de la carpeta de datos, que se mantienen como se describe en el resto del documento.
