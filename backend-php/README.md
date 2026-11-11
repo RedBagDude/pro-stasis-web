@@ -80,3 +80,12 @@ En ambos casos las respuestas son equivalentes, por lo que la elección depende 
 Si tras una migración unas rutas funcionan y otras no, conviene comprobar que el enrutador principal y los endpoints directos se subieron juntos.
 También es útil recordar que la carpeta de la API debe conservar su ubicación respecto a la web compilada para que esas rutas sigan resolviendo.
 Esta aclaración no cambia el almacenamiento de mensajes ni la protección de la carpeta de datos, que se mantienen como se describe en el resto del documento.
+
+## Relación entre la web compilada y la carpeta de la API
+La web compilada de Angular y la carpeta de la API conviven en el hosting, pero cumplen funciones distintas y deben conservar la ubicación prevista para que el enrutador y los endpoints respondan.
+Al actualizar la parte pública del sitio, los archivos compilados pueden reemplazarse en la raíz, mientras que la carpeta de la API no debe moverse ni mezclarse con esos archivos.
+Esa separación permite que tanto las rutas limpias como los endpoints directos terminados en .php sigan disponibles según la configuración del servidor.
+Si se traslada todo el proyecto a otro hosting, conviene subir juntos el enrutador principal, los endpoints directos y los archivos de datos, y comprobar después el formulario de contacto y el resto de rutas.
+La protección de los mensajes depende de que el archivo de seguridad de la carpeta de datos permanezca en su sitio, por lo que no debe alterarse durante las actualizaciones.
+También es recomendable revisar los permisos de escritura de la carpeta de datos y del archivo de mensajes después de cualquier cambio en el hosting.
+Mantener esta organización facilita detectar si un fallo proviene de la web compilada, de la configuración de rutas o de los permisos de escritura.
