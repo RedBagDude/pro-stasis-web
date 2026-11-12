@@ -89,3 +89,15 @@ Si se traslada todo el proyecto a otro hosting, conviene subir juntos el enrutad
 La protección de los mensajes depende de que el archivo de seguridad de la carpeta de datos permanezca en su sitio, por lo que no debe alterarse durante las actualizaciones.
 También es recomendable revisar los permisos de escritura de la carpeta de datos y del archivo de mensajes después de cualquier cambio en el hosting.
 Mantener esta organización facilita detectar si un fallo proviene de la web compilada, de la configuración de rutas o de los permisos de escritura.
+
+## Continuidad de los datos tras una migración
+
+Al trasladar el backend a otro hosting, la prioridad debe ser conservar juntos el enrutador principal, los endpoints directos y los archivos de datos, porque las rutas limpias y los accesos terminados en .php dependen de esa estructura.
+
+La carpeta de datos debe seguir dentro de la API y mantener su archivo de protección, ya que es lo que impide que los mensajes almacenados se descarguen desde el navegador.
+
+Si los mensajes se guardan sin base de datos externa, conviene comprobar después de la migración que el archivo de mensajes conserva permisos de escritura y que la carpeta de datos también los tiene.
+
+Actualizar la web compilada no obliga a mover la API: los archivos de Angular pueden reemplazarse en la raíz del hosting, pero la carpeta de la API debe permanecer en su ubicación.
+
+Tras la migración, prueba el formulario de contacto y el resto de rutas por la vía reescrita y, si el servidor no la admite, por los endpoints directos, y revisa el contenido acumulado de mensajes para vaciarlo si procede.
